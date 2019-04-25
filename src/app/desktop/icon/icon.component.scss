@@ -1,17 +1,17 @@
 @import '../../../styles';
 
 .button {
-  border: 1px solid transparent;
+  border: 1px solid transparent; /* TODO: em */
   cursor: default;
   display: block;
   outline: 1px solid transparent;
-  padding: 3px 12px 3px 12px;
+  padding: 3px 12px 3px 12px; /* TODO: em */
   text-align: center;
   text-decoration: none;
-  margin-bottom: 28px;
+  margin-bottom: 28px; /* TODO: em */
 
   &:first-child {
-    margin-top: 5px;
+    margin-top: 5px; /* TODO: em */
   }
 
   &:hover {
@@ -21,8 +21,8 @@
   }
 
   .icon {
-    height: 48px;
-    width: 48px;
+    height: 48px; /* TODO: em */
+    width: 48px; /* TODO: em */
   }
 
   .text {
@@ -30,6 +30,6 @@
     text-align: center;
     color: $foreground-color;
     font-size: $font-size;
-    text-shadow: 1px 2px 3px #000000;
+    text-shadow: 1px 2px 3px #000000; /* TODO: em */
   }
 }
