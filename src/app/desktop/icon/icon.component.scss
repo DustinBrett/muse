@@ -1,0 +1,35 @@
+@import '../../../styles';
+
+.button {
+  border: 1px solid transparent;
+  cursor: default;
+  display: block;
+  outline: 1px solid transparent;
+  padding: 3px 12px 3px 12px;
+  text-align: center;
+  text-decoration: none;
+  margin-bottom: 28px;
+
+  &:first-child {
+    margin-top: 5px;
+  }
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    outline: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .icon {
+    height: 48px;
+    width: 48px;
+  }
+
+  .text {
+    display: block;
+    text-align: center;
+    color: $foreground-color;
+    font-size: $font-size;
+    text-shadow: 1px 2px 3px #000000;
+  }
+}
