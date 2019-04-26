@@ -1,10 +1,10 @@
 @import '../../../styles';
 
-.button {
-  border: 1px solid transparent;
+.icon {
   cursor: default;
-  display: block;
+  border: 1px solid transparent;
   outline: 1px solid transparent;
+  display: block;
   padding: 3px 12px 3px 12px;
   text-align: center;
   text-decoration: none;
@@ -20,7 +20,7 @@
     outline: 1px solid rgba(255, 255, 255, 0.2);
   }
 
-  .icon {
+  .image {
     height: 48px;
     width: 48px;
   }
@@ -28,7 +28,7 @@
   .text {
     display: block;
     text-align: center;
-    color: $foreground-color;
+    color: $primary-color;
     font-size: $font-size;
     text-shadow: 1px 2px 3px #000000;
   }

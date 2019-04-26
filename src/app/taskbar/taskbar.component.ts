@@ -1,29 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-
-const TIMEZONE_OFFSET = -7;
-const MINUTE_MS = 60000;
-const HOUR_MS = MINUTE_MS * 60;
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-taskbar',
   templateUrl: './taskbar.component.html',
   styleUrls: ['./taskbar.component.scss']
 })
-export class TaskbarComponent implements OnInit {
+export class TaskbarComponent {
+  public icons = [
+    {
+      animation: 'highlight',
+      image: '../../assets/img/start.svg',
+      alt: 'Start'
+    },
+    {
+      animation: 'squish',
+      image: '../../assets/img/task-view.svg',
+      alt: 'Task View'
+    }
+  ];
 
   constructor() { }
-
-  ngOnInit() {
-    this.setTime();
-    setInterval(this.setTime, 1000);
-  }
-
-  setTime() {
-    const now = new Date();
-    const utc = now.getTime() + (now.getTimezoneOffset() * MINUTE_MS);
-    const time = new Date(utc + (HOUR_MS * TIMEZONE_OFFSET)).toLocaleTimeString();
-
-    document.getElementById('time').innerHTML = time;
-  }
-
 }

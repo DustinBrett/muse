@@ -1,14 +1,16 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-desktop-icon',
+  selector: 'app-taskbar-icon',
   templateUrl: './icon.component.html',
   styleUrls: ['./icon.component.scss']
 })
-export class DesktopIconComponent {
+export class TaskbarIconComponent {
+  @Input() animation: string;
   @Input() image: string;
   @Input() alt: string;
-  @Input() text: string;
+  @Input() height: string;
+  @Input() width: string;
 
   constructor() { }
 }

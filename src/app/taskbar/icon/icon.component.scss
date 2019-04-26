@@ -1,0 +1,25 @@
+@import '../../../styles';
+@import '../taskbar.component';
+
+.icon {
+  @extend %taskbar-element-attributes;
+
+  .image {
+    height: 20px;
+    width: 20px;
+    padding: 5px 8px 5px 8px;
+    fill: $primary-color;
+  }
+}
+
+.highlight {
+  &:hover .image {
+    background-color: $highlight-color; // fill (Inline SVG's)
+  }
+}
+
+.squish {
+  &:hover .image {
+    transform: scale(1.1,1);
+  }
+}

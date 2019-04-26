@@ -1,13 +1,9 @@
-@font-face {
-  font-family: 'Segoe UI';
-  src: url('/assets/font/Segoe UI.woff') format('woff');
-}
-
-$font: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-size: 0.75em;
 
-$foreground-color: #FFFFFF;
-$background-color: #080808;
+$primary-color: #FFFFFF;
+$secondary-color: #080808;
+$background-color: #336EA5;
 $highlight-color: #429CE3;
 
 body, html {
@@ -15,7 +11,7 @@ body, html {
 }
 
 body {
-  background: #000000;
+  background: $background-color;
 
   margin: 0;
   padding: 0;
@@ -32,4 +28,8 @@ body {
   user-select: none;
 
   font-family: $font;
+
+  a {
+    cursor: default;
+  }
 }

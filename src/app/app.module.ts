@@ -2,18 +2,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { BackgroundComponent } from './background/background.component';
 import { DesktopComponent } from './desktop/desktop.component';
+import { DesktopIconComponent } from './desktop/icon/icon.component';
 import { TaskbarComponent } from './taskbar/taskbar.component';
-import { IconComponent } from './desktop/icon/icon.component';
+import { TaskbarIconComponent } from './taskbar/icon/icon.component';
+import { ClockComponent } from './taskbar/clock/clock.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BackgroundComponent,
     DesktopComponent,
-    IconComponent,
-    TaskbarComponent
+    DesktopIconComponent,
+    TaskbarComponent,
+    TaskbarIconComponent,
+    ClockComponent
   ],
   imports: [
     BrowserModule

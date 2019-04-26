@@ -1,34 +1,13 @@
-<div class="taskbar">
-  <div class="buttons">
-
-    <!-- Start -->
-    <a class="button" id="start" href="#">
-      <svg class="icon" viewBox="0 0 448 512">
-        <title>Start</title>
-        <path d="M0 93.7l183.6-25.3v177.4H0V93.7zm0 324.6l183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"></path>
-      </svg>
-    </a>
-
-    <!-- Task View -->
-    <a class="button" id="task-view" href="#">
-      <svg class="icon" viewBox="0 0 171 126">
-        <title>Task View</title>
-        <g transform="translate(0,126) scale(0.1,-0.1)">
-          <path d="M330 630 l0 -620 525 0 525 0 0 620 0 620 -525 0 -525 0 0 -620z m970 0 l0 -530 -445 0 -445 0 0 530 0 530 445 0 445 0 0 -530z"/>
-          <path d="M10 630 l0 -510 140 0 140 0 0 40 0 40 -100 0 -100 0 0 430 0 430 100 0 100 0 0 40 0 40 -140 0 -140 0 0 -510z"/>
-          <path d="M1420 1100 l0 -40 100 0 100 0 0 -430 0 -430 -100 0 -100 0 0 -40 0 -40 140 0 140 0 0 510 0 510 -140 0 -140 0 0 -40z"/>
-        </g>
-      </svg>
-    </a>
-
+<div id="taskbar">
+  <div id="icons">
+    <app-taskbar-icon
+      *ngFor="let icon of icons"
+        animation="{{ icon.animation }}"
+        image="{{ icon.image }}"
+        alt="{{ icon.alt }}"
+    ></app-taskbar-icon>
   </div>
-
-  <div class="tray">
-
-    <!-- Clock -->
-    <div class="clock">
-      <span id="time"></span>
-    </div>
-
+  <div id="tray">
+    <app-clock></app-clock>
   </div>
 </div>
