@@ -6,11 +6,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./icon.component.scss']
 })
 export class TaskbarIconComponent {
-  @Input() animation: string;
+  @Input() effects: string[];
   @Input() image: string;
   @Input() alt: string;
-  @Input() height: string;
-  @Input() width: string;
 
   constructor() { }
 }

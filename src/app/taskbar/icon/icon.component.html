@@ -1,7 +1,7 @@
 <a
   class="icon" href="#"
-    [class.highlight]="animation === 'highlight'"
-    [class.squish]="animation === 'squish'"
+    [class.highlight]="effects.includes('highlight')"
+    [class.stretch]="effects.includes('stretch')"
 >
   <img class="image" src="{{ image }}" alt="{{ alt }}"/>
 </a>

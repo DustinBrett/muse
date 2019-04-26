@@ -8,12 +8,12 @@ import { Component } from '@angular/core';
 export class TaskbarComponent {
   public icons = [
     {
-      animation: 'highlight',
+      effects: ['highlight'],
       image: '../../assets/img/start.svg',
       alt: 'Start'
     },
     {
-      animation: 'squish',
+      effects: ['stretch'],
       image: '../../assets/img/task-view.svg',
       alt: 'Task View'
     }
