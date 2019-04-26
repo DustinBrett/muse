@@ -1,10 +1,5 @@
 @import '../../styles';
 
-/* TODO
-  - Blur behind taskbar opacity
-  - Convert buttons and clock into components
-*/
-
 %taskbar-element-attributes {
   cursor: pointer;
   display: table-cell;
@@ -16,9 +11,9 @@
 
 %taskbar-button-icon-attributes {
   .icon {
-    height: 20px; /* TODO: em */
-    width: 20px; /* TODO: em */
-    padding: 5px 8px 5px 8px; /* TODO: em */
+    height: 20px;
+    width: 20px;
+    padding: 5px 8px 5px 8px;
     fill: $foreground-color;
   }
 }
@@ -27,7 +22,7 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 30px; /* TODO: em */
+  height: 30px;
   background-color: $background-color;
   opacity: 0.875;
   z-index: 10001;
@@ -49,8 +44,8 @@
       }
 
       .icon {
-        height: 19px; /* TODO: em */
-        width: 19px; /* TODO: em */
+        height: 19px;
+        width: 19px;
       }
     }
 
@@ -72,7 +67,7 @@
     .clock {
       @extend %taskbar-element-attributes;
 
-      width: 90px; /* TODO: em */
+      width: 90px;
 
       #time {
         display: block;

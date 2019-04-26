@@ -19,10 +19,6 @@ export class TaskbarComponent implements OnInit {
   }
 
   setTime() {
-    /* TODO
-      - Account for DST in setTime
-    */
-
     const now = new Date();
     const utc = now.getTime() + (now.getTimezoneOffset() * MINUTE_MS);
     const time = new Date(utc + (HOUR_MS * TIMEZONE_OFFSET)).toLocaleTimeString();
