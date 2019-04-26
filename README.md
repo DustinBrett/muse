@@ -1,27 +1,60 @@
 # Muse
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+This is my attempt at a for fun project to rebuild my blog into something very custom and unique to me.
 
-## Development server
+# To Do
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Taskbar
+- Active windows entries
+  - Hover peek
+- Improve button icon dimensions to be consistent
+- Move button data to array
+- Loop through array to build buttons
+- hover and animate can be inputs
+- always convert ICO to SVG as these images have square dimensions
+  - https://www.iconfinder.com/free_icons
+- Go back to default font
+  - https://websitesetup.org/web-safe-fonts-html-css/
+  - https://www.w3.org/Style/Examples/007/fonts.en.html
+- Date on hover of clock
+- Account for DST in setTime
+- make a start menu
+- system tray icons
+- change start menu icon
+- Blur behind taskbar opacity
+- Convert buttons and clock into components
 
-## Code scaffolding
+## Desktop
+- Fix desktop icon text shadow
+- Move icon data to array
+- Loop through array to build icons
+- Setup icon grid
+  - Arrange icons into groups like I do on my PC
+- Allow dragging icons
+- renaming icon text
+- base colour wallpaper with small image in corner
+  - like the old blue one with the nymph
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Windows
+- make window from pure CSS
+- make windows and window component
+- setup better animated windows expose
 
-## Build
+## Background
+- Better animated space scene
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## General
+- Setup pipeline to GitHub page or pi server
+- right click menu
+- start up "programs"
+- auto login based on cookies
+- the ability to search, icon in start menu
+- leverage Google api's to make cool services
+- music player with my fav songs
+  - use spyamp pro skin
+- Stop using pixel and move to em/%
+- Build apps: Blog, Pictures, Videos, Documents
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Apps
+- show user info of everything known about the browser/user
+- contact app will allow DM's to me and all other forms of messaging me
