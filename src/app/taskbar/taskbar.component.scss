@@ -1,13 +1,4 @@
-@import '../../styles';
-
-%taskbar-element-attributes {
-  cursor: default;
-  display: table-cell;
-
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-}
+@import '../../theme';
 
 #taskbar {
   position: fixed;

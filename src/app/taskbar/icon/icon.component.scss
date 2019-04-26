@@ -1,8 +1,10 @@
-@import '../../../styles';
-@import '../taskbar.component';
+@import '../../../theme';
+@import '../taskbar.element';
 
 .icon {
   @extend %taskbar-element-attributes;
+
+  cursor: default;
 
   .image {
     height: 20px;
