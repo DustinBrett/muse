@@ -4,7 +4,5 @@ import { Directive } from '@angular/core';
   selector: '[appTooltip]'
 })
 export class TooltipDirective {
-
   constructor() { }
-
 }
