@@ -24,6 +24,8 @@ This is my attempt at a for fun project to rebuild my blog into something very c
 - change start menu icon
 - Blur behind taskbar opacity
 - ~~Convert buttons and clock into components~~
+- No opacity on child items like icons and clock
+- Task color below tasks (rgb(118, 185, 237))
 
 ## Desktop
 - Fix desktop icon text shadow

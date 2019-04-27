@@ -1,7 +1,11 @@
 $primary-color: #FFFFFF;
-$secondary-color: #080808;
 $background-color: #336EA5;
-$highlight-color: #429CE3;
+
+
+$taskbar-color: rgba(8, 8, 8, 0.825);
+$taskbar-element-hover-color: rgba(255, 255, 255, 0.1);
+$taskbar-image-color: rgb(255, 255, 255);
+$taskbar-image-hover-color: rgb(66, 156, 227);
 
 $font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-size: 0.75em;

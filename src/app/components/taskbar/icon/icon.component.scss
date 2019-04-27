@@ -7,21 +7,21 @@
   cursor: default;
 
   .image {
-    height: 20px;
-    width: 20px;
-    margin: 0.3em 0.6em 0.3em 0.6em;;
-    fill: $primary-color;
+    height: 16px;
+    width: 16px;
+    margin: 7px 10px 7px 10px;
+    fill: $taskbar-image-color;
   }
 }
 
-.highlight {
+.hover {
   &:hover .image {
-    fill: $highlight-color;
+    fill: $taskbar-image-hover-color;
   }
 }
 
 .stretch {
   &:hover .image {
-    transform: scale(1.1,1);
+    transform: scale(1.4,1);
   }
 }

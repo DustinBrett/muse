@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class TaskbarComponent {
   public icons = [
     {
-      effects: ['highlight'],
+      effects: ['hover'],
       image: '../../assets/img/start.svg',
       alt: 'Start'
     },
