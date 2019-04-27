@@ -10,13 +10,13 @@
     height: 16px;
     width: 16px;
     margin: 7px 10px;
-    fill: $taskbar-image-color;
+    fill: $taskbar-icon-image-color;
   }
 }
 
 .hover {
   &:hover .image {
-    fill: $taskbar-image-hover-color;
+    fill: $taskbar-icon-image-hover-color;
   }
 }
 

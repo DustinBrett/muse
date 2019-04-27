@@ -5,13 +5,14 @@
   border: 1px solid transparent;
   outline: 1px solid transparent;
   display: block;
-  padding: 3px 12px 3px 12px;
+  padding: 2px 13px;
   text-align: center;
   text-decoration: none;
   margin-bottom: 28px;
+  margin-left: 1px;
 
   &:first-child {
-    margin-top: 5px;
+    margin-top: 6px;
   }
 
   &:hover {
@@ -21,15 +22,16 @@
   }
 
   .image {
-    height: 48px;
-    width: 48px;
+    height: 44px;
+    width: 44px;
   }
 
   .text {
     display: block;
     text-align: center;
-    color: $primary-color;
+    color: $desktop-icon-text-color;
     font-size: $font-size;
-    text-shadow: 1px 2px 3px #000000;
+    padding-top: 4px;
+    text-shadow: 1px 2px 4px #000000, 1px 2px 4px #000000;
   }
 }
