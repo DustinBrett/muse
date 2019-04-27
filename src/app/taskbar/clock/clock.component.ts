@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 
-const TIMEZONE_OFFSET = -7;
+const TIMEZONE_OFFSET = -7; // Pacific Daylight Time
 const MINUTE_MS = 60000;
 const HOUR_MS = MINUTE_MS * 60;
 
@@ -9,19 +9,34 @@ const HOUR_MS = MINUTE_MS * 60;
   templateUrl: './clock.component.html',
   styleUrls: ['./clock.component.scss']
 })
-export class ClockComponent implements OnInit {
+export class ClockComponent implements AfterViewInit {
+  @ViewChild('time') time: ElementRef;
+
   constructor() { }
 
-  ngOnInit() {
+  ngAfterViewInit() {
     this.setTime();
-    setInterval(this.setTime, 1000);
+    setInterval(this.setTime.bind(this), 1000);
   }
 
-  setTime() {
-    const now = new Date();
-    const utc = now.getTime() + (now.getTimezoneOffset() * MINUTE_MS);
-    const time = new Date(utc + (HOUR_MS * TIMEZONE_OFFSET)).toLocaleTimeString();
+  padNumber(n: number): string {
+    return n.toString().padStart(2, '0');
+  }
 
-    document.getElementById('time').innerHTML = time;
+  getUTC(): number {
+    const now = new Date();
+
+    return now.getTime() + (now.getTimezoneOffset() * MINUTE_MS);
+  }
+
+  setTime(): void {
+    const now = new Date(this.getUTC() + (HOUR_MS * TIMEZONE_OFFSET));
+    const hour24 = now.getHours();
+    const morning = hour24 <= 12;
+    const hour = this.padNumber(morning ? hour24 : hour24 - 12);
+    const minute = this.padNumber(now.getMinutes());
+    const second = this.padNumber(now.getSeconds());
+
+    this.time.nativeElement.innerHTML = `${hour}:${minute}:${second} ${morning ? 'AM' : 'PM'}`;
   }
 }
