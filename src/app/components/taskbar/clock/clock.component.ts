@@ -27,7 +27,7 @@ export class ClockComponent {
     const hour24 = now.getHours();
     const morning = hour24 < 12;
     const noon = hour24 === 12;
-    const hour = this.padNumber(morning || noon ? hour24 : hour24 - 12);
+    const hour = morning || noon ? hour24 : hour24 - 12;
     const minute = this.padNumber(now.getMinutes());
     const second = this.padNumber(now.getSeconds());
 
