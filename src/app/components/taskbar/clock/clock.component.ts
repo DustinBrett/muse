@@ -12,8 +12,6 @@ const HOUR_MS = MINUTE_MS * 60;
 export class ClockComponent implements AfterViewInit {
   @ViewChild('time') time: ElementRef;
 
-  constructor() { }
-
   ngAfterViewInit() {
     this.setTime();
     setInterval(this.setTime.bind(this), 1000);

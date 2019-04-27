@@ -18,6 +18,4 @@ export class TaskbarComponent {
       alt: 'Task View'
     }
   ];
-
-  constructor() { }
 }

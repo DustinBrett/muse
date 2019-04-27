@@ -18,6 +18,4 @@ export class DesktopComponent {
       text: 'Blog'
     }
   ];
-
-  constructor() { }
 }
