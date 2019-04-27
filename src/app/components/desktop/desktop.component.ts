@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class DesktopComponent {
   public icons = [
     {
-      image: '../../assets/img/expose.png',
+      image: '../../assets/img/compass.svg',
       alt: 'Task View',
       text: 'Expose'
     },
