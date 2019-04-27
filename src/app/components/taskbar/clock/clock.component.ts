@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-
-const TIMEZONE_OFFSET = -7; // Pacific Daylight Time
-const MINUTE_MS = 60000;
-const HOUR_MS = MINUTE_MS * 60;
+import { TIMEZONE_OFFSET } from '../../../../config';
 
 @Component({
   selector: 'app-clock',
@@ -10,6 +7,9 @@ const HOUR_MS = MINUTE_MS * 60;
   styleUrls: ['./clock.component.scss']
 })
 export class ClockComponent {
+  private MINUTE_MS = 60000;
+  private HOUR_MS = this.MINUTE_MS * 60;
+
   public time = this.getTime();
 
   constructor() {
@@ -19,11 +19,11 @@ export class ClockComponent {
   getUTC(): number {
     const now = new Date();
 
-    return now.getTime() + (now.getTimezoneOffset() * MINUTE_MS);
+    return now.getTime() + (now.getTimezoneOffset() * this.MINUTE_MS);
   }
 
   getTime(): string {
-    const now = new Date(this.getUTC() + (HOUR_MS * TIMEZONE_OFFSET));
+    const now = new Date(this.getUTC() + (this.HOUR_MS * TIMEZONE_OFFSET));
     const hour24 = now.getHours();
     const morning = hour24 < 12;
     const noon = hour24 === 12;
