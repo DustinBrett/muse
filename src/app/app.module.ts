@@ -8,6 +8,7 @@ import { DesktopIconComponent } from './desktop/icon/icon.component';
 import { TaskbarComponent } from './taskbar/taskbar.component';
 import { TaskbarIconComponent } from './taskbar/icon/icon.component';
 import { ClockComponent } from './taskbar/clock/clock.component';
+import { TooltipDirective } from './directives/tooltip.directive';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ClockComponent } from './taskbar/clock/clock.component';
     DesktopIconComponent,
     TaskbarComponent,
     TaskbarIconComponent,
-    ClockComponent
+    ClockComponent,
+    TooltipDirective
   ],
   imports: [
     BrowserModule
