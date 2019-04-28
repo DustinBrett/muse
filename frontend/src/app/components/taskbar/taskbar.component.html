@@ -1,12 +1,12 @@
 <div id="taskbar">
-  <div id="icons">
+  <div id="taskbar-icons">
     <app-taskbar-icon
       *ngFor="let icon of icons"
         effects="{{ icon.effects }}"
         image=  "{{ icon.image }}"
     ></app-taskbar-icon>
   </div>
-  <div id="tray">
+  <div id="taskbar-tray">
     <app-clock></app-clock>
   </div>
 </div>
