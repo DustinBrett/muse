@@ -1,26 +1,27 @@
 @import '../../../../theme';
 
 $desktop-icon-element-border-width: 1px;
+$desktop-icon-element-outline-width: 1px;
 
 .icon {
   cursor: default;
   border: $desktop-icon-element-border-width solid transparent;
-  outline: $desktop-icon-element-border-width solid transparent;
+  outline: $desktop-icon-element-outline-width solid transparent;
   display: block;
-  padding: 2px 13px;
+  padding: 2px 13px 5px;
   text-align: center;
   text-decoration: none;
   margin-bottom: 28px;
-  margin-left: $desktop-icon-element-border-width;
+  margin-left: $desktop-icon-element-outline-width;
 
   &:first-child {
-    margin-top: 5px + $desktop-icon-element-border-width;
+    margin-top: 5px + $desktop-icon-element-outline-width;
   }
 
   &:hover {
     background-color: $desktop-icon-element-hover-color;
     border: $desktop-icon-element-border-width solid $desktop-icon-element-hover-border-color;
-    outline: $desktop-icon-element-border-width solid $desktop-icon-element-hover-color;
+    outline: $desktop-icon-element-outline-width solid $desktop-icon-element-hover-color;
   }
 
   .image {
@@ -33,7 +34,7 @@ $desktop-icon-element-border-width: 1px;
     text-align: center;
     color: $desktop-icon-text-color;
     font-size: $font-size;
-    padding-top: 4px;
+    padding-top: 3px;
     text-shadow: 1px 2px 4px rgb(0, 0, 0), 1px 2px 4px rgb(0, 0, 0);
   }
 }
