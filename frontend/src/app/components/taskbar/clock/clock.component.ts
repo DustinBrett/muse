@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TIMEZONE_OFFSET } from '../../../../config';
+import { TIMEZONE_OFFSET } from '@core/config';
 
 @Component({
   selector: 'app-clock',

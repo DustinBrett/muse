@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DESKTOP_ICONS } from '../../../config';
+import { DESKTOP_ICONS } from '@core/config';
 
 @Component({
   selector: 'app-desktop',

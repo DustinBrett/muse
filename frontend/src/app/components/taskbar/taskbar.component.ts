@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TASKBAR_ICONS } from '../../../config';
+import { TASKBAR_ICONS } from '@core/config';
 
 @Component({
   selector: 'app-taskbar',
