@@ -18,7 +18,8 @@ This is my attempt at a for fun project to rebuild my blog into something very c
   - Arrange icons into groups like I do on my PC
 - Allow dragging icons
 - renaming icon text
-- Icons wrap to next line if not enough space.
+- Icons wrap to next line if not enough space
+- Use SVG files for desktop icons
 
 ## Windows
 - make windows and window component
