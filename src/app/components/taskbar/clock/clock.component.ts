@@ -28,14 +28,10 @@ export class ClockComponent {
     const morning = hour24 < 12;
     const noon = hour24 === 12;
     const hour = morning || noon ? hour24 : hour24 - 12;
-    const minute = this.padNumber(now.getMinutes());
-    const second = this.padNumber(now.getSeconds());
+    const minute = now.getMinutes().toString().padStart(2, '0');
+    const second = now.getSeconds().toString().padStart(2, '0');
 
     return `${hour}:${minute}:${second} ${morning ? 'AM' : 'PM'}`;
-  }
-
-  padNumber(num: number): string {
-    return num.toString().padStart(2, '0');
   }
 
   updateTime() {
