@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DESKTOP_ICONS } from '../../../config';
 
 @Component({
   selector: 'app-desktop',
@@ -6,14 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./desktop.component.scss']
 })
 export class DesktopComponent {
-  public icons = [
-    {
-      image: 'vegvisir',
-      text: 'Vegvisir'
-    },
-    {
-      image: 'blog',
-      text: 'Blog'
-    }
-  ];
+  public icons = DESKTOP_ICONS;
 }

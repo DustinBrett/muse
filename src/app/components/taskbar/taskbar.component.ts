@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TASKBAR_ICONS } from '../../../config';
 
 @Component({
   selector: 'app-taskbar',
@@ -6,16 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./taskbar.component.scss']
 })
 export class TaskbarComponent {
-  public icons = [
-    {
-      effects: ['hover'],
-      image: 'start',
-      alt: 'Start'
-    },
-    {
-      effects: ['stretch'],
-      image: 'task-view',
-      alt: 'Task View'
-    }
-  ];
+  public icons = TASKBAR_ICONS;
 }

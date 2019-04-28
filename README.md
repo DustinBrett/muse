@@ -12,6 +12,7 @@ This is my attempt at a for fun project to rebuild my blog into something very c
 - make a start menu
 - system tray icons
 - Blur behind taskbar opacity
+- Allow dragging top and sides
 
 ## Desktop
 - Setup icon grid

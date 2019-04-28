@@ -7,6 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class DesktopIconComponent {
   @Input() image: string;
-  @Input() alt: string;
   @Input() text: string;
 }
