@@ -8,13 +8,11 @@ import { Component } from '@angular/core';
 export class DesktopComponent {
   public icons = [
     {
-      image: '../../assets/img/compass.svg',
-      alt: 'Task View',
-      text: 'Expose'
+      image: 'vegvisir',
+      text: 'Vegvisir'
     },
     {
-      image: '../../assets/img/blog.png',
-      alt: 'Blog Posts',
+      image: 'blog',
       text: 'Blog'
     }
   ];
