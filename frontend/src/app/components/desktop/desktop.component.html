@@ -1,4 +1,8 @@
-<div id="desktop-icons">
+<div
+  id="desktop-icons"
+  (window:resize)="onResize($event)"
+  [style.grid-template-rows]="gridTemplateRows"
+>
   <app-desktop-icon
     *ngFor="let icon of icons"
       image="{{ icon.image }}"
