@@ -8,4 +8,6 @@ import { Component, Input } from '@angular/core';
 export class TaskbarIconComponent {
   @Input() effects: string[];
   @Input() image: string;
+
+  click() { }
 }

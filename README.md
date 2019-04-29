@@ -23,9 +23,14 @@ This is my attempt at a for fun project to rebuild my blog into something very c
 - Use SVG files for desktop icons
 
 ## Windows
-- make windows and window component
+- make windows resizeable
 - setup better animated windows expose
 - Save state/position of all windows in local storage
+- When inactive grey text
+- Handle title bar content when shrinking
+- Active Window gets special zindex
+- max/min buttons
+- taskbar entries
 
 ## General
 - Setup pipeline to GitHub page or pi server

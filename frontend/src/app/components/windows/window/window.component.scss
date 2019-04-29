@@ -1,0 +1,67 @@
+@import '../../../../theme';
+
+.window {
+  position: absolute;
+  background-color: $window-background-color;
+  outline: 1px solid $window-outline-color;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  min-width: 180px;
+
+  .title-bar {
+    background-color: rgb(255, 255, 255);
+    height: 30px;
+
+    .image {
+      float: left;
+      height: 16px;
+      width: 16px;
+      margin: 6px 5px 8px 8px;
+    }
+
+    .text {
+      float: left;
+      font-size: 12px;
+      margin-top: 8px;
+    }
+
+    .buttons {
+      float: right;
+
+      .button {
+        position: relative;
+        top: 3px;
+        padding: 6px 14px 7px 14px;
+        transition: 0.2s;
+
+        &:hover {
+          background-color: $window-title-bar-button-hover-color;
+        }
+      }
+
+      .minimize:after {
+        content: '\2013';
+        margin: 0 2px;
+      }
+
+      .maximize:after {
+        content: '\25FB';
+      }
+
+      .close {
+        &:after {
+          content: '\2715';
+        }
+
+        &:hover {
+          background-color: $window-title-bar-close-hover-color;
+          color: $window-title-bar-close-hover-text-color;
+        }
+      }
+    }
+  }
+
+  .content {
+    padding: 10px;
+    width: 100%;
+  }
+}

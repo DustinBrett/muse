@@ -1,0 +1,19 @@
+<div
+  class="window"
+  [style.top]="top"
+  [style.left]="left"
+  [style.width]="width"
+  [style.height]="height"
+  cdkDrag
+>
+  <div class="title-bar">
+    <img class="image" src="{{ image }}"/>
+    <div class="text">{{ text }}</div>
+    <div class="buttons">
+      <span class="button minimize"></span>
+      <span class="button maximize"></span>
+      <span class="button close" (click)="close()"></span>
+    </div>
+  </div>
+  <div class="content">{{ content }}</div>
+</div>

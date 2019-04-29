@@ -21,3 +21,26 @@ export const TASKBAR_ICONS = [
     image: 'task-view'
   }
 ];
+
+export const WINDOWS = [
+  {
+    top: '200px',
+    left: '200px',
+    width: '200px',
+    height: '200px',
+    image: 'assets/img/blog.svg',
+    text: 'Blog',
+    content: 'My Blog Posts'
+  },
+  {
+    top: '50px',
+    left: '100px',
+    width: '300px',
+    height: '200px',
+    image: 'assets/img/travel.svg',
+    text: 'Travel',
+    content: 'My Travel Stories'
+  }
+];
+
+export const ACTIVE_WINDOWS = [];

@@ -18,7 +18,7 @@ export class DesktopComponent {
     this.setGridTemplateRows();
   }
 
-  onResize(event): void {
+  onResize(): void {
     this.setGridTemplateRows();
   }
 

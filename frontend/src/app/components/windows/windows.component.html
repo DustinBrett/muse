@@ -1,0 +1,12 @@
+<div id="windows">
+  <app-window
+    *ngFor="let window of windows"
+      top="{{ window.top }}"
+      left="{{ window.left }}"
+      width="{{ window.width }}"
+      height="{{ window.height }}"
+      image="{{ window.image }}"
+      text="{{ window.text }}"
+      content="{{ window.content }}"
+  ></app-window>
+</div>

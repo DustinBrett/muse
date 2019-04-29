@@ -1,7 +1,7 @@
 <div
   id="desktop-icons"
-  (window:resize)="onResize($event)"
   [style.grid-template-rows]="gridTemplateRows"
+  (window:resize)="onResize()"
 >
   <app-desktop-icon
     *ngFor="let icon of icons"
