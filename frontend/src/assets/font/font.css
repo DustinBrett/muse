@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'SegoeUI';
   font-display: swap;
-  src: url('~/assets/font/SegoeUI.woff2') format('woff2');
+  src: url('/assets/font/SegoeUI.woff2') format('woff2');
 }
 
 body {
