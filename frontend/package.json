@@ -14,7 +14,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --base-href /muse/",
+    "build": "ng build --prod --base-href /muse/ && del \"..\\*.js\" && del \"..\\*.html\" && rd \"..\\assets\\\" /S /Q && move \"dist\\*.js\" \"..\" && move \"dist\\*.html\" \"..\" && move \"dist\\assets\" \"..\" && rd \"dist\" /S /Q",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

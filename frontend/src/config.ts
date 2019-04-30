@@ -3,11 +3,11 @@ export const TIMEZONE_OFFSET = -7; // Pacific Daylight Time
 export const DESKTOP_ICONS = [
   {
     image: 'assets/img/travel.svg',
-    text: 'Travel'
+    text: 'This PC'
   },
   {
     image: 'assets/img/blog.svg',
-    text: 'Blog'
+    text: 'Recycle Bin'
   }
 ];
 
