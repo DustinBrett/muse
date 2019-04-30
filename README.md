@@ -13,6 +13,7 @@ This is my attempt at a for fun project to rebuild my blog into something very c
 - system tray icons
 - Blur behind taskbar opacity
 - Allow dragging top and sides
+- Fix spacing on clock
 
 ## Desktop
 - Setup icon grid
@@ -21,6 +22,7 @@ This is my attempt at a for fun project to rebuild my blog into something very c
 - renaming icon text
 - Icons wrap to next line if not enough space
 - Use SVG files for desktop icons
+- Confirm spacing with new font
 
 ## Windows
 - make windows resizeable
@@ -31,6 +33,8 @@ This is my attempt at a for fun project to rebuild my blog into something very c
 - Active Window gets special zindex
 - max/min buttons
 - taskbar entries
+- Switch to SVG for icons
+- Fix all spacing inconsistencies
 
 ## General
 - Setup pipeline to GitHub page or pi server
@@ -55,3 +59,5 @@ This is my attempt at a for fun project to rebuild my blog into something very c
 - i18n support for all languages
 - Highcharts/d3 graphs of personal data that I can collect daily
 - contact app will allow all forms of messaging me
+- Snap grids and magnets style splitting
+- Passing 2D array into icons object to allow manual placement
