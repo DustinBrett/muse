@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'SegoeUI';
+  src: url('~/assets/font/SegoeUI.woff2') format('woff2');
+}
+
+body {
+  font-family: 'SegoeUI', Helvetica, Arial, sans-serif;
+}
