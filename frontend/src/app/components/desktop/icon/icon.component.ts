@@ -10,7 +10,7 @@ export class DesktopIconComponent {
   @Input() image: string;
   @Input() text: string;
 
-  click() {
+  dblClick() {
     const window = WINDOWS.filter(w => w.text === this.text);
 
     if (window.length !== 0) {

@@ -24,21 +24,21 @@ export const TASKBAR_ICONS = [
 
 export const WINDOWS = [
   {
-    top: '200px',
-    left: '200px',
-    width: '200px',
-    height: '200px',
+    top: 200,
+    left: 200,
+    width: 200,
+    height: 200,
     image: 'assets/img/blog.svg',
-    text: 'Blog',
+    text: 'This PC',
     content: 'My Blog Posts'
   },
   {
-    top: '50px',
-    left: '100px',
-    width: '300px',
-    height: '200px',
+    top: 50,
+    left: 100,
+    width: 300,
+    height: 200,
     image: 'assets/img/travel.svg',
-    text: 'Travel',
+    text: 'Recycle Bin',
     content: 'My Travel Stories'
   }
 ];

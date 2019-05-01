@@ -10,10 +10,8 @@ import { ClockComponent } from './components/taskbar/clock/clock.component';
 import { WindowsComponent } from './components/windows/windows.component';
 import { WindowComponent } from './components/windows/window/window.component';
 
-import { TooltipDirective } from './directives/tooltip.directive';
-
 import { BrowserModule } from '@angular/platform-browser';
-import { DragDropModule } from '@angular/cdk/drag-drop';
+import { AngularDraggableModule } from 'angular2-draggable';
 
 @NgModule({
   declarations: [
@@ -25,13 +23,11 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     TaskbarIconComponent,
     ClockComponent,
     WindowsComponent,
-    WindowComponent,
-
-    TooltipDirective
+    WindowComponent
   ],
   imports: [
     BrowserModule,
-    DragDropModule
+    AngularDraggableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

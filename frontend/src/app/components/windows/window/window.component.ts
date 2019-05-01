@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ACTIVE_WINDOWS, WINDOWS } from '@core/config';
+import { ACTIVE_WINDOWS } from '@core/config';
 
 @Component({
   selector: 'app-window',
@@ -7,13 +7,15 @@ import { ACTIVE_WINDOWS, WINDOWS } from '@core/config';
   styleUrls: ['./window.component.scss']
 })
 export class WindowComponent {
-  @Input() top: string;
-  @Input() left: string;
-  @Input() width: string;
-  @Input() height: string;
+  @Input() top: number;
+  @Input() left: number;
+  @Input() width: number;
+  @Input() height: number;
   @Input() image: string;
   @Input() text: string;
   @Input() content: string;
+
+  public titleBarHeight = 30;
 
   close() {
     const windowIndex = ACTIVE_WINDOWS.findIndex(w => w.text === this.text);

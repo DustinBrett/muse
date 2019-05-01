@@ -1,12 +1,19 @@
 <div
   class="window"
-  [style.top]="top"
-  [style.left]="left"
-  [style.width]="width"
-  [style.height]="height"
-  cdkDrag
+  style.top="{{ top }}px"
+  style.left="{{ left }}px"
+  style.width="{{ width }}px"
+  style.height="{{ height }}px"
+  ngDraggable
+  [handle]="titleBar"
+  ngResizable
+  [rzHandles]="'n,e,s,w,se,sw,ne,nw'"
 >
-  <div class="title-bar">
+
+  <div
+    class="title-bar"
+    #titleBar
+  >
     <img class="image" src="{{ image }}"/>
     <div class="text">{{ text }}</div>
     <div class="buttons">
@@ -15,5 +22,9 @@
       <span class="button close" (click)="close()"></span>
     </div>
   </div>
-  <div class="content">{{ content }}</div>
+  <div
+    class="content"
+    style.height="{{ height - titleBarHeight }}px"
+  >{{ content }}</div>
+
 </div>
