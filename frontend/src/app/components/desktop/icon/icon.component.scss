@@ -17,6 +17,11 @@ $desktop-icon-text-shadow:
   -1px 0px 1px #000
 ;
 
+%desktop-icon-border {
+  border: $desktop-icon-border-width solid $desktop-icon-hover-border-color !important;
+  outline: $desktop-icon-outline-width solid $desktop-icon-hover-color !important;
+}
+
 .icon {
   cursor: default;
   border: $desktop-icon-border-width solid transparent;
@@ -33,9 +38,9 @@ $desktop-icon-text-shadow:
   }
 
   &:hover {
+    @extend %desktop-icon-border;
+
     background-color: $desktop-icon-hover-color;
-    border: $desktop-icon-border-width solid $desktop-icon-hover-border-color;
-    outline: $desktop-icon-outline-width solid $desktop-icon-hover-color;
   }
 
   .image {
@@ -51,4 +56,10 @@ $desktop-icon-text-shadow:
     font-size: $font-size;
     text-shadow: $desktop-icon-text-shadow;
   }
+}
+
+.selected {
+  @extend %desktop-icon-border;
+
+  background-color: $desktop-icon-selected-color;
 }

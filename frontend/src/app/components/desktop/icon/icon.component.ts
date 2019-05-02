@@ -10,6 +10,12 @@ export class DesktopIconComponent {
   @Input() image: string;
   @Input() text: string;
 
+  public selected = false;
+
+  click() {
+    this.selected = !this.selected;
+  }
+
   dblClick() {
     const window = WINDOWS.filter(w => w.text === this.text);
 
