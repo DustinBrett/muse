@@ -1,27 +1,41 @@
 @import '../../../../theme';
 
-$desktop-icon-element-border-width: 1px;
-$desktop-icon-element-outline-width: 1px;
+$desktop-icon-border-width: 1px;
+$desktop-icon-outline-width: 1px;
+
+$desktop-icon-text-shadow:
+  0px 0px 1px #000,
+  0px 0px 1px #000,
+  0px 0px 1px #000,
+
+  1px 1px 1px #000,
+  1px 1px 1px #000,
+
+  1px 2px 1px #000,
+  1px 2px 1px #000,
+
+  -1px 0px 1px #000
+;
 
 .icon {
   cursor: default;
-  border: $desktop-icon-element-border-width solid transparent;
-  outline: $desktop-icon-element-outline-width solid transparent;
+  border: $desktop-icon-border-width solid transparent;
+  outline: $desktop-icon-outline-width solid transparent;
   display: block;
-  padding: 2px 13px 5px;
+  padding: 2px 0px;
   text-align: center;
   text-decoration: none;
   margin-bottom: 25px;
-  margin-left: $desktop-icon-element-outline-width;
+  margin-left: $desktop-icon-outline-width;
 
   &:first-child {
-    margin-top: 5px + $desktop-icon-element-outline-width;
+    margin-top: 5px + $desktop-icon-outline-width;
   }
 
   &:hover {
-    background-color: $desktop-icon-element-hover-color;
-    border: $desktop-icon-element-border-width solid $desktop-icon-element-hover-border-color;
-    outline: $desktop-icon-element-outline-width solid $desktop-icon-element-hover-color;
+    background-color: $desktop-icon-hover-color;
+    border: $desktop-icon-border-width solid $desktop-icon-hover-border-color;
+    outline: $desktop-icon-outline-width solid $desktop-icon-hover-color;
   }
 
   .image {
@@ -32,9 +46,9 @@ $desktop-icon-element-outline-width: 1px;
   .text {
     display: block;
     text-align: center;
+    overflow-wrap: break-word;
     color: $desktop-icon-text-color;
     font-size: $font-size;
-    padding-top: 3px;
-    text-shadow: 1px 2px 4px rgb(0, 0, 0), 1px 2px 4px rgb(0, 0, 0);
+    text-shadow: $desktop-icon-text-shadow;
   }
 }
