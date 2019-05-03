@@ -4,6 +4,8 @@
   (click)="click()"
   (dblclick)="dblClick()"
   ngDraggable
+  [bounds]="body"
+  [inBounds]="true"
 >
   <img class="image" src="{{ image }}" alt="{{ text }}">
   <span class="text">{{ text }}</span>

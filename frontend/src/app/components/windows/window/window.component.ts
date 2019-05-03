@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Inject, Input } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { ACTIVE_WINDOWS } from '@core/config';
 
 @Component({
@@ -15,7 +16,14 @@ export class WindowComponent {
   @Input() text: string;
   @Input() content: string;
 
+  public body;
   public titleBarHeight = 30;
+
+  constructor(
+    @Inject(DOCUMENT) private document: Document
+  ) {
+    this.body = this.document.body;
+  }
 
   close() {
     const windowIndex = ACTIVE_WINDOWS.findIndex(w => w.text === this.text);
