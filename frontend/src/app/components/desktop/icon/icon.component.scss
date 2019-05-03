@@ -62,4 +62,8 @@ $desktop-icon-text-shadow:
   @extend %desktop-icon-border;
 
   background-color: $desktop-icon-selected-color;
+
+  &:hover {
+    background-color: $desktop-icon-selected-hover-color;
+  }
 }
