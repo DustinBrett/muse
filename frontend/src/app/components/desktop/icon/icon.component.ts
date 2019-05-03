@@ -1,6 +1,6 @@
 import { Component, Inject, Input } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { ACTIVE_WINDOWS, WINDOWS } from '@core/config';
+import { SESSION } from '@core/config';
 
 @Component({
   selector: 'app-desktop-icon',
@@ -12,7 +12,7 @@ export class DesktopIconComponent {
   @Input() text: string;
 
   public body;
-  public selected = false;
+  public session = SESSION;
 
   constructor(
     @Inject(DOCUMENT) private document: Document
@@ -20,15 +20,15 @@ export class DesktopIconComponent {
     this.body = this.document.body;
   }
 
-  click() {
-    this.selected = !this.selected;
+  onClick() {
+    this.session.desktop.selected = this.text;
   }
 
-  dblClick() {
-    const window = WINDOWS.filter(w => w.text === this.text);
+  onDblClick() {
+    const window = this.session.windows.available.filter(w => w.text === this.text);
 
     if (window.length !== 0) {
-      ACTIVE_WINDOWS.push(window[0]);
+      this.session.windows.active.push(window[0]);
     }
   }
 }

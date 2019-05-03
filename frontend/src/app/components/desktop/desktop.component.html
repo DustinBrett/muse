@@ -1,6 +1,10 @@
 <div
-  id="desktop-icons"
+  id="desktop"
+  #desktop
+
   [style.grid-template-rows]="gridTemplateRows"
+
+  (click)="onClick($event, desktop)"
   (window:resize)="onResize()"
 >
   <app-desktop-icon

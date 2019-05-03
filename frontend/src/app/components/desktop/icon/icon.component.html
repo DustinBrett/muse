@@ -1,12 +1,18 @@
 <a
   class="icon"
-  [class.selected]="selected"
-  (click)="click()"
-  (dblclick)="dblClick()"
+  [class.selected]="session.desktop.selected === text"
+
+  (click)="onClick()"
+  (dblclick)="onDblClick()"
+
   ngDraggable
   [bounds]="body"
   [inBounds]="true"
 >
-  <img class="image" src="{{ image }}" alt="{{ text }}">
+  <img
+    class="image"
+    src="{{ image }}"
+    alt="{{ text }}"
+  >
   <span class="text">{{ text }}</span>
 </a>

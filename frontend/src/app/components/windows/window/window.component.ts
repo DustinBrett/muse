@@ -1,6 +1,6 @@
 import { Component, Inject, Input } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { ACTIVE_WINDOWS } from '@core/config';
+import { SESSION } from '@core/config';
 
 @Component({
   selector: 'app-window',
@@ -26,10 +26,12 @@ export class WindowComponent {
   }
 
   close() {
-    const windowIndex = ACTIVE_WINDOWS.findIndex(w => w.text === this.text);
+    const windowIndex = SESSION.windows.active.findIndex(
+      w => w.text === this.text
+    );
 
     if (windowIndex !== -1) {
-      ACTIVE_WINDOWS.splice(windowIndex, 1);
+      SESSION.windows.active.splice(windowIndex, 1);
     }
   }
 }

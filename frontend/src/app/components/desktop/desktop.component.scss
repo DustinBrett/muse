@@ -1,5 +1,7 @@
-#desktop-icons {
+#desktop {
   display: grid;
+  height: 100%;
+  width: 100%;
   grid-auto-flow: column;
   grid-gap: 2px;
   grid-auto-columns: 73px;

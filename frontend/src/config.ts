@@ -1,46 +1,57 @@
 export const TIMEZONE_OFFSET = -7; // PST
 
-export const DESKTOP_ICONS = [
-  {
-    image: 'assets/img/travel.svg',
-    text: 'Travel'
-  },
-  {
-    image: 'assets/img/blog.svg',
-    text: 'Blog'
-  }
-];
+export const SESSION = { // Eventually on back-end
 
-export const WINDOWS = [
-  {
-    top: 50,
-    left: 100,
-    width: 300,
-    height: 200,
-    image: 'assets/img/travel.svg',
-    text: 'Travel',
-    content: 'My Travel Stories'
+  desktop: {
+    selected: undefined,
+    icons: [
+      {
+        image: 'assets/img/travel.svg',
+        text: 'Travel'
+      },
+      {
+        image: 'assets/img/blog.svg',
+        text: 'Blog'
+      }
+    ]
   },
-  {
-    top: 200,
-    left: 200,
-    width: 200,
-    height: 200,
-    image: 'assets/img/blog.svg',
-    text: 'Blog',
-    content: 'My Blog Posts'
-  }
-];
 
-export const ACTIVE_WINDOWS = [];
-
-export const TASKBAR_ICONS = [
-  {
-    effects: ['hover'],
-    image: 'start'
+  windows: {
+    selected: undefined,
+    active: [],
+    available: [
+      {
+        top: 50,
+        left: 100,
+        width: 300,
+        height: 200,
+        image: 'assets/img/travel.svg',
+        text: 'Travel',
+        content: 'My Travel Stories'
+      },
+      {
+        top: 200,
+        left: 200,
+        width: 200,
+        height: 200,
+        image: 'assets/img/blog.svg',
+        text: 'Blog',
+        content: 'My Blog Posts'
+      }
+    ]
   },
-  {
-    effects: ['stretch'],
-    image: 'task-view'
+
+  taskbar: {
+    icons: [
+      {
+        effects: ['hover'],
+        image: 'start'
+      },
+      {
+        effects: ['stretch'],
+        image: 'task-view'
+      }
+    ]
   }
-];
+
+};

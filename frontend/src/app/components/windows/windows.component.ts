@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { ACTIVE_WINDOWS } from '@core/config';
+import { SESSION } from '@core/config';
 
 @Component({
   selector: 'app-windows',
   templateUrl: './windows.component.html',
-  styleUrls: ['./windows.component.scss']
+  styleUrls: []
 })
 export class WindowsComponent {
-  public windows = ACTIVE_WINDOWS;
+  public windows = SESSION.windows.active;
 }

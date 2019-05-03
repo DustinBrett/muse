@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DESKTOP_ICONS } from '@core/config';
+import { SESSION } from '@core/config';
 
 @Component({
   selector: 'app-desktop',
@@ -8,14 +8,20 @@ import { DESKTOP_ICONS } from '@core/config';
 })
 export class DesktopComponent {
   private TOP_MARGIN = 5;
-  private ICON_SIZE = 102;
+  private ICON_SIZE = 98;
   private TASKBAR_HEIGHT = 30;
 
   public gridTemplateRows: string;
-  public icons = DESKTOP_ICONS;
+  public icons = SESSION.desktop.icons;
 
   constructor() {
     this.setGridTemplateRows();
+  }
+
+  onClick(event: Event, desktop: HTMLElement) {
+    if (event.target === desktop) {
+      SESSION.desktop.selected = undefined;
+    }
   }
 
   onResize(): void {
