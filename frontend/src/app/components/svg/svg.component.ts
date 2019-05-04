@@ -8,8 +8,4 @@ import { Component, Input } from '@angular/core';
 export class SvgComponent {
   @Input() name: string;
   @Input() title: string;
-
-  get xlink() {
-    return `#${ this.name }`;
-  }
 }
