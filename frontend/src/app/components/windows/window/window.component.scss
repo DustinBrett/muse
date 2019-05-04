@@ -68,4 +68,24 @@
   .ng-resizable-diagonal {
     border: 0;
   }
+
+  .ng-resizable-nw {
+    left: -5px;
+    top: -5px;
+  }
+
+  .ng-resizable-ne {
+    right: -5px;
+    top: -5px;
+  }
+
+  .ng-resizable-sw {
+    left: -5px;
+    bottom: -5px;
+  }
+
+  .ng-resizable-se {
+    right: -5px;
+    bottom: -5px;
+  }
 }
