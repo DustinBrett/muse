@@ -7,7 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class TaskbarIconComponent {
   @Input() effects: string[];
-  @Input() svg: string;
+  @Input() name: string;
+  @Input() title: string[];
 
   onClick() { }
 }

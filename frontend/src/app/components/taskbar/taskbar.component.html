@@ -2,8 +2,9 @@
   <div id="taskbar-icons">
     <app-taskbar-icon
       *ngFor="let icon of icons"
-        effects="{{ icon.effects }}"
-        svg="{{ icon.svg }}"
+        [effects]="icon.effects"
+        [name]="icon.name"
+        [title]="icon.title"
     ></app-taskbar-icon>
   </div>
   <div id="taskbar-tray">

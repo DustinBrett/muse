@@ -9,11 +9,13 @@ export class TaskbarComponent {
   public icons = [
     {
       effects: ['hover'],
-      svg: 'start'
+      name: 'start',
+      title: 'Start'
     },
     {
       effects: ['stretch'],
-      svg: 'task-view'
+      name: 'task-view',
+      title: 'Task View'
     }
   ];
 }

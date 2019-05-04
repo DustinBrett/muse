@@ -9,7 +9,7 @@
 >
   <app-desktop-icon
     *ngFor="let icon of icons"
-      icon="{{ icon.icon }}"
-      title= "{{ icon.title }}"
+      [icon]="icon.icon"
+      [title]="icon.title"
   ></app-desktop-icon>
 </div>
