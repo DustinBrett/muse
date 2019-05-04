@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { SESSION } from '@core/config';
 
 @Component({
   selector: 'app-taskbar',
@@ -7,5 +6,14 @@ import { SESSION } from '@core/config';
   styleUrls: ['./taskbar.component.scss']
 })
 export class TaskbarComponent {
-  public icons = SESSION.taskbar.icons;
+  public icons = [
+    {
+      effects: ['hover'],
+      svg: 'start'
+    },
+    {
+      effects: ['stretch'],
+      svg: 'task-view'
+    }
+  ];
 }

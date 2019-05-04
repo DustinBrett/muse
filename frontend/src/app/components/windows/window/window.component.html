@@ -19,8 +19,8 @@
     class="title-bar"
     #titleBar
   >
-    <img class="image" src="{{ image }}"/>
-    <div class="text">{{ text }}</div>
+    <img class="icon" src="{{ icon }}"/>
+    <div class="title">{{ title }}</div>
     <div class="buttons">
       <span class="button minimize"></span>
       <span class="button maximize"></span>
@@ -28,8 +28,8 @@
     </div>
   </div>
   <div
-    class="content"
+    class="component"
     style.height="{{ height - titleBarHeight }}px"
-  >{{ content }}</div>
+  >{{ component }}</div>
 
 </div>

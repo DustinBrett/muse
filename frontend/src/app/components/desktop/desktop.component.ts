@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SESSION } from '@core/config';
+import { App, APPS, SESSION } from '@core/config';
 
 @Component({
   selector: 'app-desktop',
@@ -8,11 +8,13 @@ import { SESSION } from '@core/config';
 })
 export class DesktopComponent {
   private TOP_MARGIN = 5;
-  private ICON_SIZE = 98;
   private TASKBAR_HEIGHT = 30;
+  private ICON_SIZE = 98;
+
+  private ICON_PADDING = (this.TOP_MARGIN + this.TASKBAR_HEIGHT);
 
   public gridTemplateRows: string;
-  public icons = SESSION.desktop.icons;
+  public icons: Array<App> = APPS;
 
   constructor() {
     this.setGridTemplateRows();
@@ -20,7 +22,8 @@ export class DesktopComponent {
 
   onClick(event: Event, desktop: HTMLElement) {
     if (event.target === desktop) {
-      SESSION.desktop.selected = undefined;
+      SESSION.selected.icon = undefined;
+      SESSION.selected.window = undefined;
     }
   }
 
@@ -29,13 +32,13 @@ export class DesktopComponent {
   }
 
   getIconsPerColumn(innerHeight: number): number {
-    return Math.floor((innerHeight - (this.TOP_MARGIN + this.TASKBAR_HEIGHT)) / this.ICON_SIZE);
+    return Math.floor((innerHeight - this.ICON_PADDING) / this.ICON_SIZE);
   }
 
   getGridTemplateRows(rowCount: number, returnString = ''): string {
     return rowCount === 0
       ? returnString
-      : this.getGridTemplateRows(rowCount - 1, returnString + `${this.ICON_SIZE}px `)
+      : this.getGridTemplateRows(rowCount - 1,  `${returnString} ${this.ICON_SIZE}px`)
     ;
   }
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SESSION } from '@core/config';
+import { App, SESSION } from '@core/config';
 
 @Component({
   selector: 'app-windows',
@@ -7,5 +7,15 @@ import { SESSION } from '@core/config';
   styleUrls: []
 })
 export class WindowsComponent {
-  public windows = SESSION.windows.active;
+  public windows: Array<App> = SESSION.active.windows;
+  public defaults = {
+    position: {
+      top: 200,
+      left: 200
+    },
+    dimensions: {
+      width: 200,
+      height: 200
+    }
+  };
 }

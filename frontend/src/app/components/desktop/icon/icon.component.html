@@ -1,6 +1,6 @@
 <a
-  class="icon"
-  [class.selected]="session.desktop.selected === text"
+  class="desktop-icon"
+  [class.selected]="session.selected.icon === title"
 
   (click)="onClick()"
   (dblclick)="onDblClick()"
@@ -10,9 +10,9 @@
   [inBounds]="true"
 >
   <img
-    class="image"
-    src="{{ image }}"
-    alt="{{ text }}"
+    class="icon"
+    src="{{ icon }}"
+    alt="{{ title }}"
   >
-  <span class="text">{{ text }}</span>
+  <span class="title">{{ title }}</span>
 </a>

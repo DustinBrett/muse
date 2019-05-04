@@ -1,12 +1,12 @@
 @import '../../../../theme';
 @import '../taskbar.element';
 
-.icon {
+.taskbar-icon {
   @extend %taskbar-element-attributes;
 
   cursor: default;
 
-  .image {
+  .icon {
     height: 16px;
     width: 16px;
     margin: 7px 10px;
@@ -15,13 +15,13 @@
 }
 
 .hover {
-  &:hover .image {
+  &:hover .icon {
     fill: $taskbar-icon-image-hover-color;
   }
 }
 
 .stretch {
-  &:hover .image {
+  &:hover .icon {
     transform: scale(1.4,1);
   }
 }

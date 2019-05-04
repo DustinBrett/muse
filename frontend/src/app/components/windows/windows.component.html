@@ -1,15 +1,31 @@
 <div id="windows">
   <app-window
     *ngFor="let window of windows"
-      top="{{ window.top }}"
-      left="{{ window.left }}"
+      top="{{
+        window.position && window.position.top
+          ? window.position.top
+          : defaults.position.top
+        }}"
+      left="{{
+        window.position && window.position.left
+        ? window.position.left
+        : defaults.position.left
+      }}"
 
-      width="{{ window.width }}"
-      height="{{ window.height }}"
+      width="{{
+        window.dimensions && window.dimensions.width
+        ? window.dimensions.width
+        : defaults.dimensions.width
+      }}"
+      height="{{
+        window.dimensions && window.dimensions.height
+        ? window.dimensions.height
+        : defaults.dimensions.height
+      }}"
 
-      image="{{ window.image }}"
-      text="{{ window.text }}"
+      icon="{{ window.icon }}"
+      title="{{ window.title }}"
 
-      content="{{ window.content }}"
+      component="{{ window.component }}"
   ></app-window>
 </div>

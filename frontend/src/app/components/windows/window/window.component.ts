@@ -12,9 +12,9 @@ export class WindowComponent {
   @Input() left: number;
   @Input() width: number;
   @Input() height: number;
-  @Input() image: string;
-  @Input() text: string;
-  @Input() content: string;
+  @Input() icon: string;
+  @Input() title: string;
+  @Input() component: string;
 
   public body;
   public titleBarHeight = 30;
@@ -26,12 +26,12 @@ export class WindowComponent {
   }
 
   close() {
-    const windowIndex = SESSION.windows.active.findIndex(
-      w => w.text === this.text
+    const windowIndex = SESSION.active.windows.findIndex(
+      w => w.title === this.title
     );
 
     if (windowIndex !== -1) {
-      SESSION.windows.active.splice(windowIndex, 1);
+      SESSION.active.windows.splice(windowIndex, 1);
     }
   }
 }

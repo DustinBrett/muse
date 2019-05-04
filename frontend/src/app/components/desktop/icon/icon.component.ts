@@ -1,6 +1,6 @@
 import { Component, Inject, Input } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { SESSION } from '@core/config';
+import { APPS, SESSION } from '@core/config';
 
 @Component({
   selector: 'app-desktop-icon',
@@ -8,8 +8,8 @@ import { SESSION } from '@core/config';
   styleUrls: ['./icon.component.scss']
 })
 export class DesktopIconComponent {
-  @Input() image: string;
-  @Input() text: string;
+  @Input() icon: string;
+  @Input() title: string;
 
   public body;
   public session = SESSION;
@@ -21,14 +21,20 @@ export class DesktopIconComponent {
   }
 
   onClick() {
-    this.session.desktop.selected = this.text;
+    this.session.selected.icon = this.title;
   }
 
   onDblClick() {
-    const window = this.session.windows.available.filter(w => w.text === this.text);
+    if (!this.isRunning()) {
+      const window = APPS.filter(w => w.title === this.title);
 
-    if (window.length !== 0) {
-      this.session.windows.active.push(window[0]);
+      if (window.length !== 0) {
+        this.session.active.windows.push(window[0]);
+      }
     }
+  }
+
+  isRunning() {
+    return this.session.active.windows.filter(w => w.title === this.title).length > 0;
   }
 }
