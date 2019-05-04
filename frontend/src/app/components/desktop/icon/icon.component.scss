@@ -9,25 +9,21 @@ $desktop-icon-outline-width: 1px;
 }
 
 $desktop-icon-text-shadow:
-  0px 0px 1px #000,
-  0px 0px 1px #000,
-  0px 0px 1px #000,
-
+  0 0 1px #000,
+  0 0 1px #000,
+  0 0 1px #000,
   1px 1px 1px #000,
   1px 1px 1px #000,
-
   1px 2px 1px #000,
   1px 2px 1px #000,
-
-  -1px 0px 1px #000
-;
+  -1px 0 1px #000;
 
 .desktop-icon {
   cursor: default;
   border: $desktop-icon-border-width solid transparent;
   outline: $desktop-icon-outline-width solid transparent;
   display: block;
-  padding: 2px 0px;
+  padding: 2px 0;
   text-align: center;
   text-decoration: none;
   margin-bottom: 25px;

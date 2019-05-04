@@ -16,7 +16,8 @@
     "start": "ng serve",
     "build": "ng build --prod && del \"..\\*.js\" && del \"..\\*.html\" && del \"..\\*.ico\" && rd \"..\\assets\\\" /S /Q && move \"dist\\*.js\" \"..\" && move \"dist\\*.html\" \"..\" && move \"dist\\*.ico\" \"..\" && move \"dist\\assets\" \"..\" && rd \"dist\" /S /Q",
     "test": "ng test",
-    "lint": "ng lint",
+    "lint": "ng lint && npm run lint:styles",
+    "lint:styles": "stylelint \"src/app/**/*.scss\"",
     "e2e": "ng e2e"
   },
   "dependencies": {
@@ -51,6 +52,8 @@
     "karma-jasmine": "^2.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
     "protractor": "~5.4.0",
+    "stylelint": "^10.0.1",
+    "stylelint-config-standard": "^18.3.0",
     "ts-node": "^8.1.0",
     "tslint": "^5.16.0",
     "typescript": "<3.3.0"

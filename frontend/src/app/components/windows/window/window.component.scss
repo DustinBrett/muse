@@ -38,17 +38,17 @@
         }
       }
 
-      .minimize:after {
+      .minimize::after {
         content: '\2013';
         margin: 0 2px;
       }
 
-      .maximize:after {
+      .maximize::after {
         content: '\25FB';
       }
 
       .close {
-        &:after {
+        &::after {
           content: '\2715';
         }
 
