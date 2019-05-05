@@ -22,6 +22,7 @@ export class WindowComponent {
   constructor(
     @Inject(DOCUMENT) private document: Document
   ) {
+    SESSION.selected.window = this;
     this.body = this.document.body;
   }
 

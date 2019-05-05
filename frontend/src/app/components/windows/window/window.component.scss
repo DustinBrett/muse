@@ -10,6 +10,7 @@
   .title-bar {
     background-color: rgb(255, 255, 255);
     height: 30px;
+    color: $window-title-bar-unselected-text-color;
 
     .icon /deep/ svg {
       float: left;
@@ -84,4 +85,8 @@
 
 .selected {
   z-index: 1;
+
+  .title-bar {
+    color: $window-title-bar-selected-text-color;
+  }
 }
