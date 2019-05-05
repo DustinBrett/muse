@@ -4,8 +4,6 @@
 .taskbar-entry {
   @extend %taskbar-element-attributes;
 
-  width: 160px;
-
   .icon /deep/ svg {
     pointer-events: none;
     float: left;
