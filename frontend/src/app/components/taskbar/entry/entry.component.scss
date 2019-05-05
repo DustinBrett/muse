@@ -5,6 +5,8 @@
   @extend %taskbar-element-attributes;
 
   width: 160px;
+  transition: 3s;
+  animation: ease-in;
 
   .icon /deep/ svg {
     float: left;
