@@ -36,11 +36,11 @@ export class WindowComponent {
     }
   }
 
-  onMouseDown(window: HTMLElement) {
+  onMouseDown(window: WindowComponent) {
     SESSION.selected.window = window;
   }
 
-  isSelected(window: HTMLElement) {
+  isSelected(window: WindowComponent) {
     return SESSION.selected.window === window;
   }
 }
