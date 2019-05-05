@@ -46,7 +46,7 @@
       .close /deep/ svg {
         &:hover {
           background-color: $window-title-bar-close-hover-color;
-          color: $window-title-bar-close-hover-text-color;
+          fill: $window-title-bar-close-fill-text-color;
         }
       }
     }
