@@ -7,6 +7,13 @@
         [title]="icon.title"
     ></app-taskbar-icon>
   </div>
+  <div id="taskbar-entries">
+    <app-taskbar-entry
+      *ngFor="let entry of entries"
+        [icon]="entry.icon"
+        [title]="entry.title"
+    ></app-taskbar-entry>
+  </div>
   <div id="taskbar-tray">
     <app-clock></app-clock>
   </div>

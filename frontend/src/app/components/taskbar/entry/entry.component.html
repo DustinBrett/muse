@@ -1,0 +1,14 @@
+<a
+  class="taskbar-entry"
+
+  (click)="onClick()"
+>
+  <app-svg-icon
+    class="icon"
+
+    [name]="icon"
+    [title]="title"
+  ></app-svg-icon>
+  <div class="title">{{ title }}</div>
+  <div class="highlight"></div>
+</a>

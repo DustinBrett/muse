@@ -8,7 +8,8 @@
   z-index: 99999;
   background-color: $taskbar-color;
 
-  #taskbar-icons {
+  #taskbar-icons,
+  #taskbar-entries {
     display: inline-block;
   }
 

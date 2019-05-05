@@ -36,6 +36,14 @@ export class WindowComponent {
     }
   }
 
+  minimize(): void {
+    console.log('Minimize clicked.');
+  }
+
+  maximize(): void {
+    console.log('Maximize clicked.');
+  }
+
   onMouseDown(window: WindowComponent) {
     SESSION.selected.window = window;
   }

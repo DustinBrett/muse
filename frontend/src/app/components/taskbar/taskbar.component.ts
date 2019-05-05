@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { App, SESSION } from '@core/config';
 
 @Component({
   selector: 'app-taskbar',
@@ -18,4 +19,5 @@ export class TaskbarComponent {
       title: 'Task View'
     }
   ];
+  public entries: Array<App> = SESSION.active.windows;
 }

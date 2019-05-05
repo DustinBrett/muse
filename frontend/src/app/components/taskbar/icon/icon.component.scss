@@ -4,8 +4,6 @@
 .taskbar-icon {
   @extend %taskbar-element-attributes;
 
-  cursor: default;
-
   .icon /deep/ svg {
     height: 16px;
     width: 16px;

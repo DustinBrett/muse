@@ -9,6 +9,7 @@ import { DesktopComponent } from './components/desktop/desktop.component';
 import { DesktopIconComponent } from './components/desktop/icon/icon.component';
 import { TaskbarComponent } from './components/taskbar/taskbar.component';
 import { TaskbarIconComponent } from './components/taskbar/icon/icon.component';
+import { TaskbarEntryComponent } from './components/taskbar/entry/entry.component';
 import { ClockComponent } from './components/taskbar/clock/clock.component';
 import { WindowsComponent } from './components/windows/windows.component';
 import { WindowComponent } from './components/windows/window/window.component';
@@ -27,6 +28,7 @@ import { AngularDraggableModule } from 'angular2-draggable';
     DesktopIconComponent,
     TaskbarComponent,
     TaskbarIconComponent,
+    TaskbarEntryComponent,
     ClockComponent,
     WindowsComponent,
     WindowComponent
