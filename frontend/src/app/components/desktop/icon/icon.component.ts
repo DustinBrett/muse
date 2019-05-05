@@ -11,7 +11,7 @@ export class DesktopIconComponent {
   @Input() icon: string;
   @Input() title: string;
 
-  public body;
+  public body: HTMLElement;
 
   constructor(
     @Inject(DOCUMENT) private document: Document

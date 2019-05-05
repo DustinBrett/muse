@@ -16,7 +16,7 @@ export class WindowComponent {
   @Input() title: string;
   @Input() component: string;
 
-  public body;
+  public body: HTMLElement;
   public titleBarHeight = 30;
 
   constructor(
@@ -33,5 +33,13 @@ export class WindowComponent {
     if (windowIndex !== -1) {
       SESSION.active.windows.splice(windowIndex, 1);
     }
+  }
+
+  onMouseDown(window: HTMLElement) {
+    SESSION.selected.window = window;
+  }
+
+  isSelected(window: HTMLElement) {
+    return SESSION.selected.window === window;
   }
 }

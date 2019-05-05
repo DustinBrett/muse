@@ -10,17 +10,19 @@ export class TaskbarIconComponent implements OnInit {
   @Input() name: string;
   @Input() title: string[];
 
-  private expandable: boolean;
+  private expand: boolean;
   public expanded: boolean;
+  public hover: boolean;
 
   ngOnInit() {
-    this.expandable = this.effects.includes('expand');
+    this.expand = this.effects.includes('expand');
+    this.hover = this.effects.includes('hover');
   }
 
   onClick(): void { }
 
   onMouseOver($event) {
-    if (this.expandable) {
+    if (this.expand) {
       this.expanded = $event.type === 'mouseenter';
     }
   }
