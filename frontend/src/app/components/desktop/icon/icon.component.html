@@ -1,6 +1,6 @@
 <a
   class="desktop-icon"
-  [class.selected]="session.selected.icon === title"
+  [class.selected]="isSelected()"
 
   (click)="onClick()"
   (dblclick)="onDblClick()"

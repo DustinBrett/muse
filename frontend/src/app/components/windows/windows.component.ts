@@ -8,7 +8,7 @@ import { App, SESSION } from '@core/config';
 })
 export class WindowsComponent {
   public windows: Array<App> = SESSION.active.windows;
-  public defaults = {
+  public default = {
     position: {
       top: 200,
       left: 200

@@ -20,7 +20,7 @@ export class DesktopComponent {
     this.setGridTemplateRows();
   }
 
-  onClick(event: Event, desktop: HTMLElement) {
+  onClick(event: Event, desktop: HTMLElement): void {
     if (event.target === desktop) {
       SESSION.selected.icon = undefined;
       SESSION.selected.window = undefined;
@@ -35,14 +35,11 @@ export class DesktopComponent {
     return Math.floor((innerHeight - this.ICON_PADDING) / this.ICON_SIZE);
   }
 
-  getGridTemplateRows(rowCount: number, returnString = ''): string {
-    return rowCount === 0
-      ? returnString
-      : this.getGridTemplateRows(rowCount - 1,  `${returnString} ${this.ICON_SIZE}px`)
-    ;
-  }
-
   setGridTemplateRows(): void {
-    this.gridTemplateRows = this.getGridTemplateRows(this.getIconsPerColumn(window.innerHeight));
+    this.gridTemplateRows =
+      new Array(this.getIconsPerColumn(window.innerHeight))
+        .fill(`${this.ICON_SIZE}px`)
+        .join(' ')
+    ;
   }
 }

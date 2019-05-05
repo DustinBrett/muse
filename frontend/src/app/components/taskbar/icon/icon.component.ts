@@ -10,5 +10,5 @@ export class TaskbarIconComponent {
   @Input() name: string;
   @Input() title: string[];
 
-  onClick() { }
+  onClick(): void { }
 }

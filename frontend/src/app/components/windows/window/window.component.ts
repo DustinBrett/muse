@@ -25,7 +25,7 @@ export class WindowComponent {
     this.body = this.document.body;
   }
 
-  close() {
+  close(): void {
     const windowIndex = SESSION.active.windows.findIndex(
       w => w.title === this.title
     );
