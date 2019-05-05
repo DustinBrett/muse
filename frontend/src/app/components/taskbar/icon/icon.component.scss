@@ -19,9 +19,3 @@
     fill: $taskbar-icon-image-hover-color;
   }
 }
-
-.stretch {
-  &:hover .icon /deep/ svg {
-    transform: scale(1.4, 1);
-  }
-}

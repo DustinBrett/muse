@@ -14,12 +14,12 @@ export interface App {
 
 export const APPS = [
   {
-    icon: 'assets/img/blog.svg',
+    icon: 'blog',
     title: 'Blog',
     component: 'app-blog'
   },
   {
-    icon: 'assets/img/travel.svg',
+    icon: 'travel',
     title: 'Travel',
     component: 'app-travel'
   }

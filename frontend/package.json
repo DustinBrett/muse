@@ -14,7 +14,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod && del \"..\\*.js\" && del \"..\\*.html\" && del \"..\\*.ico\" && rd \"..\\assets\\\" /S /Q && move \"dist\\*.js\" \"..\" && move \"dist\\*.html\" \"..\" && move \"dist\\*.ico\" \"..\" && move \"dist\\assets\" \"..\" && rd \"dist\" /S /Q",
+    "build": "ng build --prod && del \"..\\*.js\" && del \"..\\*.css\" && del \"..\\*.html\" && del \"..\\*.ico\" && rd \"..\\assets\\\" /S /Q && move \"dist\\*.js\" \"..\" && move \"dist\\*.css\" \"..\" && move \"dist\\*.html\" \"..\" && move \"dist\\*.ico\" \"..\" && move \"dist\\assets\" \"..\" && rd \"dist\" /S /Q",
     "test": "ng test",
     "lint": "ng lint && npm run lint:styles",
     "lint:styles": "stylelint \"src/*.scss\" && stylelint \"src/app/**/*.scss\"",

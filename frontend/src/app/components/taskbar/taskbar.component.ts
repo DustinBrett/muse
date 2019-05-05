@@ -13,7 +13,7 @@ export class TaskbarComponent {
       title: 'Start'
     },
     {
-      effects: ['stretch'],
+      effects: ['expand'],
       name: 'task-view',
       title: 'Task View'
     }

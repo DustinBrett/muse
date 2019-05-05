@@ -2,14 +2,15 @@
   class="taskbar-icon"
 
   [class.hover]="effects.includes('hover')"
-  [class.stretch]="effects.includes('stretch')"
 
   (click)="onClick()"
+  (mouseenter)='onMouseOver($event)'
+  (mouseleave)='onMouseOver($event)'
 >
   <app-svg-icon
     class="icon"
 
-    [name]="name"
+    [name]="name + (expanded ? '-expanded' : '')"
     [title]="title"
   ></app-svg-icon>
 </a>

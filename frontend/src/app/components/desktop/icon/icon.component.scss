@@ -39,7 +39,7 @@ $desktop-icon-text-shadow:
     background-color: $desktop-icon-hover-color;
   }
 
-  .icon {
+  .icon /deep/ svg {
     height: 44px;
     width: 44px;
   }

@@ -18,12 +18,17 @@
     class="title-bar"
     #titleBar
   >
-    <img class="icon" [src]="icon"/>
+    <app-svg-icon class="icon" [name]="icon"></app-svg-icon>
     <div class="title">{{ title }}</div>
     <div class="buttons">
-      <span class="button minimize"></span>
-      <span class="button maximize"></span>
-      <span class="button close" (click)="close()"></span>
+      <app-svg-icon class="button minimize" name="minimize"></app-svg-icon>
+      <app-svg-icon class="button maximize" name="maximize"></app-svg-icon>
+      <app-svg-icon
+        class="button close"
+        name="close"
+
+        (click)="close()"
+      ></app-svg-icon>
     </div>
   </div>
   <div

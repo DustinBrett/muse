@@ -11,7 +11,7 @@
     background-color: rgb(255, 255, 255);
     height: 30px;
 
-    .icon {
+    .icon /deep/ svg {
       float: left;
       height: 16px;
       width: 16px;
@@ -21,37 +21,29 @@
     .title {
       float: left;
       font-size: 12px;
-      margin-top: 8px;
+      margin-top: 6px;
     }
 
     .buttons {
       float: right;
 
-      .button {
+      .button /deep/ svg {
         position: relative;
-        top: 3px;
-        padding: 6px 14px 7px 14px;
-        transition: 0.2s;
+        padding: 9px 14px 11px 14px;
+        height: 10px;
+        width: 10px;
+        transition: 0.3s;
 
         &:hover {
           background-color: $window-title-bar-button-hover-color;
         }
       }
 
-      .minimize::after {
-        content: '\2013';
-        margin: 0 2px;
+      .minimize /deep/ svg {
+        padding: 10px 14px 10px 14px;
       }
 
-      .maximize::after {
-        content: '\25FB';
-      }
-
-      .close {
-        &::after {
-          content: '\2715';
-        }
-
+      .close /deep/ svg {
         &:hover {
           background-color: $window-title-bar-close-hover-color;
           color: $window-title-bar-close-hover-text-color;

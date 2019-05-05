@@ -12,5 +12,21 @@ body {
   padding: 0;
   overflow: hidden;
   user-select: none;
-  background-color: $background-color;
+  background: linear-gradient(-45deg, rgb(0, 0, 0), $background-color, rgb(0, 0, 0));
+  background-size: 500% 500%;
+  animation: Gradient 15s ease infinite;
+
+  @keyframes Gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 }
