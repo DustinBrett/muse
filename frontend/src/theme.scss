@@ -1,19 +1,23 @@
 $background-color: rgb(58, 110, 165);
 
+$hover-color: rgba(255, 255, 255, 0.1);
+$selected-color: rgba(255, 255, 255, 0.2);
+$selected-hover-color: rgba(255, 255, 255, 0.3);
+
 $desktop-icon-text-color: rgb(255, 255, 255);
-$desktop-icon-hover-color: rgba(255, 255, 255, 0.1);
-$desktop-icon-selected-color: rgba(255, 255, 255, 0.2);
-$desktop-icon-selected-hover-color: rgba(255, 255, 255, 0.15);
-$desktop-icon-hover-border-color: rgba(255, 255, 255, 0.35);
+$desktop-icon-hover-color: $hover-color;
+$desktop-icon-selected-color: $selected-color;
+$desktop-icon-selected-hover-color: $selected-hover-color;
+$desktop-icon-hover-border-color: rgba(255, 255, 255, 0.4);
 
 $taskbar-color: rgba(8, 8, 8, 0.875);
-$taskbar-element-hover-color: rgba(255, 255, 255, 0.1);
+$taskbar-element-hover-color: $hover-color;
 $taskbar-icon-image-color: rgb(255, 255, 255);
 $taskbar-icon-image-hover-color: rgb(66, 156, 227);
 $taskbar-entry-title-text-color: rgba(255, 255, 255, 0.8);
 $taskbar-entry-highlight-color: rgb(118, 185, 237);
-$taskbar-entry-selected-color: rgba(255, 255, 255, 0.2);
-$taskbar-entry-selected-hover-color: rgba(255, 255, 255, 0.25);
+$taskbar-entry-selected-color: $selected-color;
+$taskbar-entry-selected-hover-color: $selected-hover-color;
 
 $clock-text-color: rgb(255, 255, 255);
 
