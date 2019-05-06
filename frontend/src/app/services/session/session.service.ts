@@ -10,7 +10,7 @@ export interface App {
   selected: {
     icon: boolean;
     window: boolean;
-  }
+  };
 }
 
 @Injectable({
@@ -42,11 +42,11 @@ export class SessionService {
     }
   ];
 
-  private _apps: BehaviorSubject<App[]> = new BehaviorSubject(this.dataStore);
-  public apps: Observable<App[]> = this._apps.asObservable();
+  private APPS: BehaviorSubject<App[]> = new BehaviorSubject(this.dataStore);
+  public apps: Observable<App[]> = this.APPS.asObservable();
 
   private updateDataStore() {
-    this._apps.next(this.dataStore);
+    this.APPS.next(this.dataStore);
   }
 
   activateApp(id: number) {
