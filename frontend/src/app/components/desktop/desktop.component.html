@@ -8,8 +8,10 @@
   (window:resize)="onResize()"
 >
   <app-desktop-icon
-    *ngFor="let icon of icons"
+    *ngFor="let icon of icons | async"
+      [id]="icon.id"
       [icon]="icon.icon"
       [title]="icon.title"
+      [selected]="icon.selected.icon"
   ></app-desktop-icon>
 </div>

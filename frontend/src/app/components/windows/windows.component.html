@@ -1,6 +1,6 @@
 <div id="windows">
   <app-window
-    *ngFor="let window of windows"
+    *ngFor="let window of windows | async"
       [top]="
         window.position && window.position.top
           ? window.position.top
@@ -23,8 +23,10 @@
         : default.dimensions.height
       "
 
+      [id]="window.id"
       [icon]="window.icon"
       [title]="window.title"
+      [selected]="window.selected.window"
 
       [component]="window.component"
   ></app-window>

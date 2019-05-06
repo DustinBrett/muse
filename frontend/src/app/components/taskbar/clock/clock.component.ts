@@ -26,8 +26,4 @@ export class ClockComponent {
 
     return `${hour}:${minute}:${second} ${morning ? 'AM' : 'PM'}`;
   }
-
-  onClick(): void {
-    console.log('Clock clicked.');
-  }
 }

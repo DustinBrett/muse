@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from '@core/app/services/session/session.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-windows',
@@ -24,6 +25,8 @@ export class WindowsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.windows = this.sessionService.session.active.windows;
+    this.windows = this.sessionService.apps.pipe(
+      map(apps => apps.filter(app => app.active))
+    );
   }
 }

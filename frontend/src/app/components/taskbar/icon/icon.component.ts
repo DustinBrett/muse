@@ -19,10 +19,6 @@ export class TaskbarIconComponent implements OnInit {
     this.hover = this.effects.includes('hover');
   }
 
-  onClick(): void {
-    console.log(`${ this.title } icon clicked.`);
-  }
-
   onMouseOver($event) {
     if (this.expand) {
       this.expanded = $event.type === 'mouseenter';

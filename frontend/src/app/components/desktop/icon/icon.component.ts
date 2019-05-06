@@ -1,7 +1,7 @@
 import { Component, Inject, Input } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { APPS } from '@core/config';
 import { SessionService } from '@core/app/services/session/session.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-desktop-icon',
@@ -9,8 +9,10 @@ import { SessionService } from '@core/app/services/session/session.service';
   styleUrls: ['./icon.component.scss']
 })
 export class DesktopIconComponent {
+  @Input() id: number;
   @Input() icon: string;
   @Input() title: string;
+  @Input() selected: string;
 
   public body: HTMLElement;
 
@@ -22,24 +24,10 @@ export class DesktopIconComponent {
   }
 
   onClick(): void {
-    this.sessionService.session.selected.icon = this.title;
+    this.sessionService.selectIcon(this.id);
   }
 
   onDblClick(): void {
-    if (!this.isActive()) {
-      const window = APPS.filter(w => w.title === this.title);
-
-      if (window.length !== 0) {
-        this.sessionService.session.active.windows.push(window[0]);
-      }
-    }
-  }
-
-  isActive(): boolean {
-    return this.sessionService.session.active.windows.filter(w => w.title === this.title).length > 0;
-  }
-
-  isSelected(): boolean {
-    return this.sessionService.session.selected.icon === this.title;
+    this.sessionService.activateApp(this.id);
   }
 }

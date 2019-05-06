@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SessionService } from '@core/app/services/session/session.service';
+import { App, SessionService } from '@core/app/services/session/session.service';
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-taskbar',
@@ -7,6 +9,7 @@ import { SessionService } from '@core/app/services/session/session.service';
   styleUrls: ['./taskbar.component.scss']
 })
 export class TaskbarComponent implements OnInit {
+  public entries: Observable<App[]>;
   public icons = [
     {
       effects: ['hover'],
@@ -19,13 +22,14 @@ export class TaskbarComponent implements OnInit {
       title: 'Task View'
     }
   ];
-  public entries;
 
   constructor(
     private sessionService: SessionService
   ) { }
 
   ngOnInit() {
-    this.entries = this.sessionService.session.active.windows;
+    this.entries = this.sessionService.apps.pipe(
+      map(apps => apps.filter(app => app.active))
+    );
   }
 }

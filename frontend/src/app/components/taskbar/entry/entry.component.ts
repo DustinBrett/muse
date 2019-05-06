@@ -7,21 +7,16 @@ import { SessionService } from '@core/app/services/session/session.service';
   styleUrls: ['./entry.component.scss']
 })
 export class TaskbarEntryComponent {
+  @Input() id: number;
   @Input() icon: string;
-  @Input() title: string[];
+  @Input() title: string;
+  @Input() selected: boolean;
 
   constructor(
     private sessionService: SessionService
   ) { }
 
   onClick(): void {
-    console.log(`${ this.title } entry clicked.`);
-  }
-
-  isSelected(): boolean {
-    return (
-      this.sessionService.session.selected.window &&
-      this.sessionService.session.selected.window.title === this.title
-    );
+    this.sessionService.selectWindow(this.id);
   }
 }
