@@ -23,6 +23,7 @@ export class DesktopComponent {
   onClick(event: Event, desktop: HTMLElement): void {
     if (event.target === desktop) {
       SESSION.selected.icon = undefined;
+      SESSION.selected.window = undefined; // TODO: This shouldn't new z-index of windows.
     }
   }
 

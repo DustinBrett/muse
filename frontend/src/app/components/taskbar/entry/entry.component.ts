@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { SESSION } from '@core/config';
 
 @Component({
   selector: 'app-taskbar-entry',
@@ -9,9 +10,14 @@ export class TaskbarEntryComponent {
   @Input() icon: string;
   @Input() title: string[];
 
-  public width = '160px'; // TODO: Make adjustable based on width of screen
-
   onClick(): void {
     console.log(`${ this.title } entry clicked.`);
+  }
+
+  isSelected(): boolean {
+    return (
+      SESSION.selected.window &&
+      SESSION.selected.window.title === this.title
+    );
   }
 }
