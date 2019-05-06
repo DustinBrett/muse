@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { SESSION } from '@core/config';
+import { SessionService } from '@core/app/services/session/session.service';
 
 @Component({
   selector: 'app-taskbar-entry',
@@ -10,14 +10,18 @@ export class TaskbarEntryComponent {
   @Input() icon: string;
   @Input() title: string[];
 
+  constructor(
+    private sessionService: SessionService
+  ) { }
+
   onClick(): void {
     console.log(`${ this.title } entry clicked.`);
   }
 
   isSelected(): boolean {
     return (
-      SESSION.selected.window &&
-      SESSION.selected.window.title === this.title
+      this.sessionService.session.selected.window &&
+      this.sessionService.session.selected.window.title === this.title
     );
   }
 }

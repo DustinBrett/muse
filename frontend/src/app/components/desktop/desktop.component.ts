@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { App, APPS, SESSION } from '@core/config';
+import { App, APPS } from '@core/config';
+import { SessionService } from '@core/app/services/session/session.service';
 
 @Component({
   selector: 'app-desktop',
@@ -16,14 +17,16 @@ export class DesktopComponent {
   public gridTemplateRows: string;
   public icons: Array<App> = APPS;
 
-  constructor() {
+  constructor(
+    private sessionService: SessionService
+  ) {
     this.setGridTemplateRows();
   }
 
   onClick(event: Event, desktop: HTMLElement): void {
     if (event.target === desktop) {
-      SESSION.selected.icon = undefined;
-      SESSION.selected.window = undefined; // TODO: This shouldn't new z-index of windows.
+      this.sessionService.session.selected.icon = undefined;
+      this.sessionService.session.selected.window = undefined; // TODO: This shouldn't new z-index of windows.
     }
   }
 

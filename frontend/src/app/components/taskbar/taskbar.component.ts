@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
-import { App, SESSION } from '@core/config';
+import { Component, OnInit } from '@angular/core';
+import { SessionService } from '@core/app/services/session/session.service';
 
 @Component({
   selector: 'app-taskbar',
   templateUrl: './taskbar.component.html',
   styleUrls: ['./taskbar.component.scss']
 })
-export class TaskbarComponent {
+export class TaskbarComponent implements OnInit {
   public icons = [
     {
       effects: ['hover'],
@@ -19,5 +19,13 @@ export class TaskbarComponent {
       title: 'Task View'
     }
   ];
-  public entries: Array<App> = SESSION.active.windows;
+  public entries;
+
+  constructor(
+    private sessionService: SessionService
+  ) { }
+
+  ngOnInit() {
+    this.entries = this.sessionService.session.active.windows;
+  }
 }

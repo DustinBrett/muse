@@ -24,16 +24,3 @@ export const APPS = [
     component: 'app-travel'
   }
 ];
-
-export const SESSION = {
-
-  active: {
-    windows: []
-  },
-
-  selected: {
-    icon: undefined,
-    window: undefined
-  }
-
-};

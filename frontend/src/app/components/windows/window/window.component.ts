@@ -1,6 +1,6 @@
 import { Component, Inject, Input } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { SESSION } from '@core/config';
+import { SessionService } from '@core/app/services/session/session.service';
 
 @Component({
   selector: 'app-window',
@@ -20,19 +20,20 @@ export class WindowComponent {
   public titleBarHeight = 30;
 
   constructor(
-    @Inject(DOCUMENT) private document: Document
+    @Inject(DOCUMENT) private document: Document,
+    private sessionService: SessionService
   ) {
-    SESSION.selected.window = this;
+    sessionService.session.selected.window = this;
     this.body = this.document.body;
   }
 
   close(): void {
-    const windowIndex = SESSION.active.windows.findIndex(
+    const windowIndex = this.sessionService.session.active.windows.findIndex(
       w => w.title === this.title
     );
 
     if (windowIndex !== -1) {
-      SESSION.active.windows.splice(windowIndex, 1);
+      this.sessionService.session.active.windows.splice(windowIndex, 1);
     }
   }
 
@@ -45,10 +46,10 @@ export class WindowComponent {
   }
 
   onMouseDown(window: WindowComponent) {
-    SESSION.selected.window = window;
+    this.sessionService.session.selected.window = window;
   }
 
   isSelected(window: WindowComponent) {
-    return SESSION.selected.window === window;
+    return this.sessionService.session.selected.window === window;
   }
 }

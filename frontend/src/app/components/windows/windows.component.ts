@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
-import { App, SESSION } from '@core/config';
+import { Component, OnInit } from '@angular/core';
+import { SessionService } from '@core/app/services/session/session.service';
 
 @Component({
   selector: 'app-windows',
   templateUrl: './windows.component.html',
   styleUrls: []
 })
-export class WindowsComponent {
-  public windows: Array<App> = SESSION.active.windows;
+export class WindowsComponent implements OnInit {
+  public windows;
   public default = {
     position: {
       top: 200,
@@ -18,4 +18,12 @@ export class WindowsComponent {
       height: 200
     }
   };
+
+  constructor(
+    private sessionService: SessionService
+  ) { }
+
+  ngOnInit() {
+    this.windows = this.sessionService.session.active.windows;
+  }
 }
