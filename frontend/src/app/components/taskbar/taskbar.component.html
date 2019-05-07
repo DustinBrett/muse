@@ -1,4 +1,8 @@
-<div id="taskbar">
+<div
+  id="taskbar"
+
+  (window:resize)="onResize()"
+>
 
   <div id="taskbar-icons">
     <app-taskbar-icon
@@ -9,7 +13,11 @@
     ></app-taskbar-icon>
   </div>
 
-  <div id="taskbar-entries">
+  <div
+  id="taskbar-entries"
+
+  [style.width]="taskBarEntriesWidth"
+  >
     <app-taskbar-entry
       *ngFor="let entry of apps | async"
         [id]="entry.id"
@@ -19,7 +27,10 @@
     ></app-taskbar-entry>
   </div>
 
-  <div id="taskbar-tray">
+  <div
+    #taskBarTray
+    id="taskbar-tray"
+  >
     <app-clock></app-clock>
   </div>
 

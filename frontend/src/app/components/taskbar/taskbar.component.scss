@@ -8,13 +8,12 @@
   z-index: 99999;
   background-color: $taskbar-color;
 
-  #taskbar-icons,
-  #taskbar-entries {
+  #taskbar-icons {
     display: inline-block;
   }
 
   #taskbar-entries {
-    padding: 0 3px;
+    display: inline-flex;
   }
 
   #taskbar-tray {
