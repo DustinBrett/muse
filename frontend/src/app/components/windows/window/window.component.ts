@@ -1,6 +1,6 @@
 import { Component, Inject, Input } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { SessionService } from '@core/app/services/session/session.service';
+import { AppService } from '@core/app/services/app/app.service';
 
 @Component({
   selector: 'app-window',
@@ -19,20 +19,22 @@ export class WindowComponent {
   @Input() selected: boolean;
 
   public body: HTMLElement;
-  public heightWithTitleBar = this.height + 30;
+
+  public titleBarHeight = 30;
+  public heightWithTitleBar = `${ this.height + this.titleBarHeight }px`;
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
-    private sessionService: SessionService
+    private appService: AppService
   ) {
     this.body = this.document.body;
   }
 
-  onMouseDown() {
-    this.sessionService.selectWindow(this.id);
+  onMouseDown(): void {
+    this.appService.select(this.id, 'window');
   }
 
   close(): void {
-    this.sessionService.closeWindow(this.id);
+    this.appService.deactivate(this.id);
   }
 }

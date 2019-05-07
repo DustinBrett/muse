@@ -1,7 +1,6 @@
 import { Component, Inject, Input } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { SessionService } from '@core/app/services/session/session.service';
-import { map } from 'rxjs/operators';
+import { AppService } from '@core/app/services/app/app.service';
 
 @Component({
   selector: 'app-desktop-icon',
@@ -18,16 +17,16 @@ export class DesktopIconComponent {
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
-    private sessionService: SessionService
+    private appService: AppService
   ) {
     this.body = this.document.body;
   }
 
   onClick(): void {
-    this.sessionService.selectIcon(this.id);
+    this.appService.select(this.id, 'icon');
   }
 
   onDblClick(): void {
-    this.sessionService.activateApp(this.id);
+    this.appService.activate(this.id);
   }
 }

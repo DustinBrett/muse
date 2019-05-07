@@ -11,17 +11,18 @@ export class TaskbarIconComponent implements OnInit {
   @Input() title: string[];
 
   private expand: boolean;
-  public expanded: boolean;
   public hover: boolean;
+  public iconName: string;
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.expand = this.effects.includes('expand');
     this.hover = this.effects.includes('hover');
+    this.iconName = this.name;
   }
 
-  onMouseOver($event) {
+  onMouseOver($event): void {
     if (this.expand) {
-      this.expanded = $event.type === 'mouseenter';
+      this.iconName = this.name + ($event.type === 'mouseenter' ? '-expanded' : '');
     }
   }
 }

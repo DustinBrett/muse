@@ -8,7 +8,7 @@
   (window:resize)="onResize()"
 >
   <app-desktop-icon
-    *ngFor="let icon of icons | async"
+    *ngFor="let icon of apps | async"
       [id]="icon.id"
       [icon]="icon.icon"
       [title]="icon.title"

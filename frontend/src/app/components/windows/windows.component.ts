@@ -1,14 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { SessionService } from '@core/app/services/session/session.service';
-import { map } from 'rxjs/operators';
+import { Component } from '@angular/core';
+import { AppService } from '@core/app/services/app/app.service';
 
 @Component({
   selector: 'app-windows',
   templateUrl: './windows.component.html',
   styleUrls: []
 })
-export class WindowsComponent implements OnInit {
-  public windows;
+export class WindowsComponent {
+  public apps = this.appService.active;
   public default = {
     position: {
       top: 200,
@@ -21,12 +20,6 @@ export class WindowsComponent implements OnInit {
   };
 
   constructor(
-    private sessionService: SessionService
+    private appService: AppService
   ) { }
-
-  ngOnInit() {
-    this.windows = this.sessionService.apps.pipe(
-      map(apps => apps.filter(app => app.active))
-    );
-  }
 }

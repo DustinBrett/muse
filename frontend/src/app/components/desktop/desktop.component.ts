@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { App, SessionService } from '@core/app/services/session/session.service';
-import { Observable } from 'rxjs';
+import { AppService } from '@core/app/services/app/app.service';
 
 @Component({
   selector: 'app-desktop',
@@ -8,25 +7,24 @@ import { Observable } from 'rxjs';
   styleUrls: ['./desktop.component.scss']
 })
 export class DesktopComponent {
-  private TOP_MARGIN = 5;
-  private TASKBAR_HEIGHT = 30;
-  private ICON_SIZE = 98;
+  private topMargin = 5;
+  private taskbarHeight = 30;
+  private iconSize = 98;
 
-  private ICON_PADDING = (this.TOP_MARGIN + this.TASKBAR_HEIGHT);
+  private iconPadding = (this.topMargin + this.taskbarHeight);
 
   public gridTemplateRows: string;
-  public icons: Observable<App[]>;
+  public apps = this.appService.apps;
 
   constructor(
-    private sessionService: SessionService
+    private appService: AppService
   ) {
     this.setGridTemplateRows();
-    this.icons = this.sessionService.apps;
   }
 
   onClick(event: Event, desktop: HTMLElement): void {
     if (event.target === desktop) {
-      this.sessionService.resetSelection();
+      this.appService.select();
     }
   }
 
@@ -35,13 +33,13 @@ export class DesktopComponent {
   }
 
   getIconsPerColumn(innerHeight: number): number {
-    return Math.floor((innerHeight - this.ICON_PADDING) / this.ICON_SIZE);
+    return Math.floor((innerHeight - this.iconPadding) / this.iconSize);
   }
 
   setGridTemplateRows(): void {
     this.gridTemplateRows =
       new Array(this.getIconsPerColumn(window.innerHeight))
-        .fill(`${this.ICON_SIZE}px`)
+        .fill(`${ this.iconSize }px`)
         .join(' ')
     ;
   }

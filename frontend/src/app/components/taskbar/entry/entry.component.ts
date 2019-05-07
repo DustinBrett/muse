@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { SessionService } from '@core/app/services/session/session.service';
+import { AppService } from '@core/app/services/app/app.service';
 
 @Component({
   selector: 'app-taskbar-entry',
@@ -13,10 +13,10 @@ export class TaskbarEntryComponent {
   @Input() selected: boolean;
 
   constructor(
-    private sessionService: SessionService
+    private appService: AppService
   ) { }
 
   onClick(): void {
-    this.sessionService.selectWindow(this.id);
+    this.appService.select(this.id, 'window');
   }
 }

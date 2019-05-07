@@ -1,6 +1,6 @@
 <div id="windows">
   <app-window
-    *ngFor="let window of windows | async"
+    *ngFor="let window of apps | async"
       [top]="
         window.position && window.position.top
           ? window.position.top

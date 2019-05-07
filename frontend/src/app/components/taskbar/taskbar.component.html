@@ -1,4 +1,5 @@
 <div id="taskbar">
+
   <div id="taskbar-icons">
     <app-taskbar-icon
       *ngFor="let icon of icons"
@@ -7,16 +8,19 @@
         [title]="icon.title"
     ></app-taskbar-icon>
   </div>
+
   <div id="taskbar-entries">
     <app-taskbar-entry
-      *ngFor="let entry of entries | async"
+      *ngFor="let entry of apps | async"
         [id]="entry.id"
         [icon]="entry.icon"
         [title]="entry.title"
         [selected]="entry.selected.window"
     ></app-taskbar-entry>
   </div>
+
   <div id="taskbar-tray">
     <app-clock></app-clock>
   </div>
+
 </div>

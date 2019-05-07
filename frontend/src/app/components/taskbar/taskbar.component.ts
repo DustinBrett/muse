@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { App, SessionService } from '@core/app/services/session/session.service';
-import { map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { Component } from '@angular/core';
+import { AppService } from '@core/app/services/app/app.service';
 
 @Component({
   selector: 'app-taskbar',
   templateUrl: './taskbar.component.html',
   styleUrls: ['./taskbar.component.scss']
 })
-export class TaskbarComponent implements OnInit {
-  public entries: Observable<App[]>;
+export class TaskbarComponent {
+  public apps = this.appService.active;
   public icons = [
     {
       effects: ['hover'],
@@ -24,12 +22,6 @@ export class TaskbarComponent implements OnInit {
   ];
 
   constructor(
-    private sessionService: SessionService
+    private appService: AppService
   ) { }
-
-  ngOnInit() {
-    this.entries = this.sessionService.apps.pipe(
-      map(apps => apps.filter(app => app.active))
-    );
-  }
 }
