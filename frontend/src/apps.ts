@@ -11,7 +11,7 @@ export interface App {
   position?: {
     top: number;
     left: number;
-  }
+  };
   dimensions?: {
     width: number;
     height: number;
