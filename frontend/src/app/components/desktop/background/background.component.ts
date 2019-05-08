@@ -13,7 +13,7 @@ interface Coordinates {
 })
 export class BackgroundComponent implements AfterViewInit {
   @ViewChild('background') background: ElementRef;
-  
+
   private dustCloudCount = 5; // TODO: Avg in galaxy?
   private colorRange = [0, 60, 240]; // TODO: Based on top 10 avg intesities for stars in universe
   private colorRangeIndexCount = this.colorRange.length - 1;
@@ -97,7 +97,7 @@ export class BackgroundComponent implements AfterViewInit {
     )`;
   }
 
-  getRandomColor(min = 1, max = 25): string {
+  getRandomColor(min = 5, max = 25): string {
     const transparent = this.getRandom(0, 2) === 1; // 33%
 
     if (transparent) {
@@ -112,45 +112,4 @@ export class BackgroundComponent implements AfterViewInit {
   getRandomPosition(): string {
     return `at ${ this.getRandom(0, 100) }% ${ this.getRandom(0, 100) }%`;
   }
-
-  // createSmokeParticle() {
-  //   const randomNumbers = (length) => {
-  //     return Array.from(new Array(length), () => Math.random());
-  //   };
-
-  //   const TAU = Math.PI * 2;
-
-  //   const ctx = this.background.nativeElement.getContext('2d');
-
-  //   const cx = this.width * Math.random();
-  //   const cy = this.height * Math.random();
-
-  //   const xRand = -5 + Math.random() * 10;
-  //   const yRand = -5 + Math.random() * 10;
-  //   const xRand2 = 10 + Math.random() * (cx / 2);
-  //   const yRand2 = 10 + Math.random() * (cy / 2);
-
-  //   const color = {
-  //     r: 135,
-  //     g: 69,
-  //     b: 66
-  //   };
-
-  //   ctx.fillStyle = this.getRandomColor();
-
-  //   Array
-  //     .from(new Array(200), () => randomNumbers(3))
-  //     .forEach((p, i, arr) => {
-  //       const length = arr.length;
-
-  //       const x = Math.cos(TAU / xRand / length * i) * p[2] * xRand2 + cx;
-  //       const y = Math.sin(TAU / yRand / length * i) * p[2] * yRand2 + cy;
-
-
-  //       ctx.beginPath();
-  //       ctx.moveTo(x, y);
-  //       ctx.arc(x, y, p[2] * 4, 0, TAU);
-  //       ctx.fill();
-  //     });
-  // }
 }

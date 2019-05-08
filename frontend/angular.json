@@ -32,7 +32,12 @@
               "node_modules/angular2-draggable/css/resizable.min.css"
             ],
             "scripts": [],
-            "es5BrowserSupport": true
+            "es5BrowserSupport": true,
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src"
+              ]
+            }
           },
           "configurations": {
             "production": {

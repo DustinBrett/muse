@@ -1,4 +1,4 @@
-import { Component, DoCheck, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AppService } from '@core/app/services/app/app.service';
 
 @Component({
@@ -6,9 +6,7 @@ import { AppService } from '@core/app/services/app/app.service';
   templateUrl: './taskbar.component.html',
   styleUrls: ['./taskbar.component.scss']
 })
-export class TaskbarComponent implements DoCheck {
-  @ViewChild('taskBarTray') taskBarTray;
-
+export class TaskbarComponent implements OnInit {
   public apps = this.appService.active;
   public icons = [
     {
@@ -30,7 +28,7 @@ export class TaskbarComponent implements DoCheck {
     private appService: AppService
   ) { }
 
-  ngDoCheck() {
+  ngOnInit() {
     this.setTaskBarEntriesWidth();
   }
 
@@ -40,7 +38,7 @@ export class TaskbarComponent implements DoCheck {
 
   setTaskBarEntriesWidth() {
     this.taskBarEntriesWidth =
-      `${ window.innerWidth - this.taskBarIconsWidth - this.taskBarTray.nativeElement.offsetWidth }px`
+      `${ window.innerWidth - this.taskBarIconsWidth - 80 }px`
     ;
   }
 }

@@ -1,4 +1,4 @@
-@import '../../../../theme';
+@import 'theme';
 
 $desktop-icon-border-width: 1px;
 $desktop-icon-outline-width: 1px;
@@ -42,7 +42,7 @@ $desktop-icon-text-shadow:
     width: 44px;
   }
 
-  .title {
+  .label {
     display: block;
     text-align: center;
     overflow-wrap: break-word;
