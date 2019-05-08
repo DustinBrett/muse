@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { SvgComponent } from './components/svg/svg.component';
 import { SvgDefinitionsComponent } from './components/svg/definitions/definitions.component';
 
+import { BackgroundComponent } from './components/desktop/background/background.component';
 import { DesktopComponent } from './components/desktop/desktop.component';
 import { DesktopIconComponent } from './components/desktop/icon/icon.component';
 import { TaskbarComponent } from './components/taskbar/taskbar.component';
@@ -24,6 +25,7 @@ import { AngularDraggableModule } from 'angular2-draggable';
     SvgComponent,
     SvgDefinitionsComponent,
 
+    BackgroundComponent,
     DesktopComponent,
     DesktopIconComponent,
     TaskbarComponent,

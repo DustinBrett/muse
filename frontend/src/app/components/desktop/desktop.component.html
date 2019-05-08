@@ -1,6 +1,7 @@
+<app-background></app-background>
 <div
-  id="desktop"
   #desktop
+  id="desktop-icons"
 
   [style.grid-template-rows]="gridTemplateRows"
 
@@ -8,10 +9,10 @@
   (window:resize)="onResize()"
 >
   <app-desktop-icon
-    *ngFor="let icon of apps | async"
-      [id]="icon.id"
-      [icon]="icon.icon"
-      [title]="icon.title"
-      [selected]="icon.selected.icon"
+  *ngFor="let icon of apps | async"
+    [id]="icon.id"
+    [icon]="icon.icon"
+    [title]="icon.title"
+    [selected]="icon.selected.icon"
   ></app-desktop-icon>
 </div>
