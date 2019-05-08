@@ -13,8 +13,7 @@ interface Coordinates {
 })
 export class BackgroundComponent implements AfterViewInit {
   @ViewChild('background') background: ElementRef;
-
-  private starCount = 600; // TODO: Proportational to screen size and distrubtion of stars in universe based on latest information
+  
   private dustCloudCount = 5; // TODO: Avg in galaxy?
   private colorRange = [0, 60, 240]; // TODO: Based on top 10 avg intesities for stars in universe
   private colorRangeIndexCount = this.colorRange.length - 1;
@@ -22,6 +21,9 @@ export class BackgroundComponent implements AfterViewInit {
   public width = window.innerWidth;
   public height = window.innerHeight;
   public dustClouds = this.getBackgroundDustClouds();
+
+  // TODO: Proportational to screen size and distrubtion of stars in universe based on latest information
+  private starCount = (this.width * this.height) * 0.0025;
 
   constructor(
     private sanitizer: DomSanitizer
@@ -95,13 +97,13 @@ export class BackgroundComponent implements AfterViewInit {
     )`;
   }
 
-  getRandomColor(min = 1, max = 17): string {
+  getRandomColor(min = 1, max = 25): string {
     const transparent = this.getRandom(0, 2) === 1; // 33%
 
     if (transparent) {
       return 'transparent';
     } else {
-      const darkColor = this.getRandom(min, this.getRandom(min, max));
+      const darkColor = this.getRandom(min, max);
 
       return `rgb(${darkColor}, ${darkColor}, ${darkColor})`;
     }
