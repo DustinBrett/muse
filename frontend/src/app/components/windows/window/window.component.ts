@@ -18,16 +18,15 @@ export class WindowComponent {
   @Input() component: string;
   @Input() selected: boolean;
 
-  public body: HTMLElement;
+  public body: HTMLBodyElement;
 
   public titleBarHeight = 30;
-  public heightWithTitleBar = `${ this.height + this.titleBarHeight }px`;
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
     private appService: AppService
   ) {
-    this.body = this.document.body;
+    this.body = this.document.body as HTMLBodyElement;
   }
 
   onMouseDown(): void {

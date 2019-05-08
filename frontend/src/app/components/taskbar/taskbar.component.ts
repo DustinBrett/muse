@@ -21,8 +21,11 @@ export class TaskbarComponent implements OnInit {
     }
   ];
 
+  private iconWidth = 36;
+  private clockWidth = 80;
+  private taskBarIconsWidth = this.icons.length * this.iconWidth;
+
   public taskBarEntriesWidth: string;
-  public taskBarIconsWidth = this.icons.length * 36;
 
   constructor(
     private appService: AppService
@@ -38,7 +41,7 @@ export class TaskbarComponent implements OnInit {
 
   setTaskBarEntriesWidth() {
     this.taskBarEntriesWidth =
-      `${ window.innerWidth - this.taskBarIconsWidth - 80 }px`
+      `${ window.innerWidth - this.taskBarIconsWidth - this.clockWidth }px`
     ;
   }
 }

@@ -13,13 +13,13 @@ export class DesktopIconComponent {
   @Input() title: string;
   @Input() selected: string;
 
-  public body: HTMLElement;
+  public body: HTMLBodyElement;
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
     private appService: AppService
   ) {
-    this.body = this.document.body;
+    this.body = this.document.body as HTMLBodyElement;
   }
 
   onClick(): void {
