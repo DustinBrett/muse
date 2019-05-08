@@ -14,7 +14,7 @@ interface Coordinates {
 export class BackgroundComponent implements AfterViewInit {
   @ViewChild('background') background: ElementRef;
 
-  private dustCloudCount = 5; // TODO: Avg in galaxy?
+  private dustCloudCount = 4; // TODO: Avg in galaxy?
   private colorRange = [0, 60, 240]; // TODO: Based on top 10 avg intesities for stars in universe
   private colorRangeIndexCount = this.colorRange.length - 1;
 
