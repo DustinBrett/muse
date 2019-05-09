@@ -14,22 +14,21 @@ interface Coordinates {
 export class BackgroundComponent implements AfterViewInit {
   @ViewChild('background') background: ElementRef;
 
-  private dustCloudCount = 4; // TODO: Avg in galaxy?
-  private colorRange = [0, 60, 240]; // TODO: Based on top 10 avg intesities for stars in universe
+  private dustCloudCount = 3;
+  private colorRange = [0, 60, 240];
   private colorRangeIndexCount = this.colorRange.length - 1;
 
   public width = window.innerWidth;
   public height = window.innerHeight;
   public dustClouds = this.getBackgroundDustClouds();
 
-  // TODO: Proportational to screen size and distrubtion of stars in universe based on latest information
-  private starCount = (this.width * this.height) * 0.0025;
+  private starCount = (this.width * this.height) * 0.005;
 
   constructor(
     private sanitizer: DomSanitizer
   ) { }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     const context = this.background.nativeElement.getContext('2d');
 
     for (let i = 0; i < this.starCount; i++) {
@@ -37,8 +36,9 @@ export class BackgroundComponent implements AfterViewInit {
         context,
         this.getStarCoordinates(),
         this.getStarRadius(),
-        this.getStarColor(), // TODO: What kind of variation in color is there for stars in our galaxy?
-        this.getStarBrightness() // TODO: What does saturation coerlate to then use known universe avg's
+        this.getStarHue(),
+        this.getStarSaturation(),
+        this.getStarLightness()
       );
     }
   }
@@ -52,11 +52,12 @@ export class BackgroundComponent implements AfterViewInit {
     coordinates: Coordinates,
     radius: number,
     hue: number,
-    saturation: number
-  ) {
+    saturation: number,
+    lightness: number
+  ): void {
     ctx.beginPath();
     ctx.arc(coordinates.x, coordinates.y, radius, 0, 360);
-    ctx.fillStyle = `hsl(${hue}, ${saturation}%, 88%)`;
+    ctx.fillStyle = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
     ctx.fill();
   }
 
@@ -68,15 +69,19 @@ export class BackgroundComponent implements AfterViewInit {
   }
 
   getStarRadius(): number {
-    return Math.random() * 1.2;
+    return Math.random() * (this.getRandom(7.5, 15) / 10);
   }
 
-  getStarColor(): number {
+  getStarHue(): number {
     return this.colorRange[this.getRandom(0, this.colorRangeIndexCount)];
   }
 
-  getStarBrightness(): number {
+  getStarSaturation(): number {
     return this.getRandom(50, 100);
+  }
+
+  getStarLightness(): number {
+    return this.getRandom(85, 100);
   }
 
   getBackgroundDustClouds(): SafeStyle {
@@ -89,16 +94,19 @@ export class BackgroundComponent implements AfterViewInit {
     return this.sanitizer.bypassSecurityTrustStyle(dustClouds.join(', '));
   }
 
-  getRandomRadialGradient() {
+  getRandomRadialGradient(): string {
+    const color1 = this.getRandomColor(5, 10);
+    const color2 = color1 !== 'transparent' ? 'transparent' : this.getRandomColor(10, 15, false);
+
     return `radial-gradient(
       ${ this.getRandomPosition() },
-      ${ this.getRandomColor() },
-      ${ this.getRandomColor() }
+      ${ color1 },
+      ${ color2 }
     )`;
   }
 
-  getRandomColor(min = 5, max = 25): string {
-    const transparent = this.getRandom(0, 2) === 1; // 33%
+  getRandomColor(min = 5, max = 15, allowTransparent = true): string {
+    const transparent = allowTransparent ? this.getRandom(0, 2) === 1 : false;
 
     if (transparent) {
       return 'transparent';
