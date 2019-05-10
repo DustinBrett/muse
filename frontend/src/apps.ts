@@ -1,7 +1,8 @@
 export interface App {
   id: number;
   icon: string;
-  title: string;
+  label: string;
+  description: string;
   component: string;
   active: boolean;
   selected: {
@@ -23,7 +24,8 @@ export const APPS = [
   {
     id: 1,
     icon: 'blog',
-    title: 'Blog',
+    label: 'Blog',
+    description: 'About my life',
     component: 'app-blog',
     active: false,
     selected: {
@@ -35,7 +37,8 @@ export const APPS = [
   {
     id: 2,
     icon: 'travel',
-    title: 'Travel',
+    label: 'Travel',
+    description: 'About my travels',
     component: 'app-travel',
     active: false,
     selected: {
