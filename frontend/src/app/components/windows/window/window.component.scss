@@ -83,10 +83,10 @@
   }
 }
 
-.selected {
-  z-index: 1;
+.selected .title-bar {
+  color: $window-title-bar-selected-text-color;
+}
 
-  .title-bar {
-    color: $window-title-bar-selected-text-color;
-  }
+.foreground {
+  z-index: 1;
 }

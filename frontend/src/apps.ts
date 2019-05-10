@@ -7,6 +7,7 @@ export interface App {
   selected: {
     icon: boolean;
     window: boolean;
+    foreground: boolean;
   };
   position?: {
     top: number;
@@ -27,7 +28,8 @@ export const APPS = [
     active: false,
     selected: {
       icon: false,
-      window: false
+      window: false,
+      foreground: false
     }
   },
   {
@@ -38,7 +40,8 @@ export const APPS = [
     active: false,
     selected: {
       icon: false,
-      window: false
+      window: false,
+      foreground: false
     }
   }
 ];

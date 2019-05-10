@@ -6,7 +6,7 @@
   [style.grid-template-rows]="gridTemplateRows"
 
   (click)="onClick($event, desktop)"
-  (window:resize)="onResize()"
+  (window:resize)="setGridTemplateRows()"
 >
   <app-desktop-icon
   *ngFor="let icon of apps | async"

@@ -17,6 +17,7 @@ export class WindowComponent {
   @Input() title: string;
   @Input() component: string;
   @Input() selected: boolean;
+  @Input() foreground: boolean;
 
   public body: HTMLBodyElement;
 

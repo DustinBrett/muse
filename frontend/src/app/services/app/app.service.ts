@@ -29,13 +29,17 @@ export class AppService {
   }
 
   deactivate(id: number): void {
-    this.update(app => app.active = app.id === id ? false : app.active);
+    this.update(
+      app => app.active = app.id === id
+      ? false
+      : app.active
+    );
   }
 
   select(id?: number, type?: string): void {
     this.update(
       id && type
-      ? app => app.selected[type] = app.id === id
+      ? app => app.selected[type] = app.selected.foreground = app.id === id
       : app => app.selected.icon = app.selected.window = false
     );
   }

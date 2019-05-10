@@ -29,12 +29,21 @@ export class BackgroundComponent implements AfterViewInit {
   ) { }
 
   ngAfterViewInit(): void {
+    this.createBackground();
+  }
+
+  createBackground(): void {
     const context = this.background.nativeElement.getContext('2d');
+
+    context.canvas.width = window.innerWidth;
+    context.canvas.height = window.innerHeight;
+
+    context.clearRect(0, 0, context.canvas.width, context.canvas.height);
 
     for (let i = 0; i < this.starCount; i++) {
       this.drawStar(
         context,
-        this.getStarCoordinates(),
+        this.getStarCoordinates(context),
         this.getStarRadius(),
         this.getStarHue(),
         this.getStarSaturation(),
@@ -61,10 +70,10 @@ export class BackgroundComponent implements AfterViewInit {
     ctx.fill();
   }
 
-  getStarCoordinates(): Coordinates {
+  getStarCoordinates(context: CanvasRenderingContext2D): Coordinates {
     return {
-      x: Math.random() * this.width,
-      y: Math.random() * this.height
+      x: Math.random() * context.canvas.width,
+      y: Math.random() * context.canvas.height
     };
   }
 

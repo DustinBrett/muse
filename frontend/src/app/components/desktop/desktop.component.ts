@@ -30,10 +30,6 @@ export class DesktopComponent {
     }
   }
 
-  onResize(): void {
-    this.setGridTemplateRows();
-  }
-
   getIconsPerColumn(innerHeight: number): number {
     return Math.floor((innerHeight - this.iconPadding) / this.iconSize);
   }
