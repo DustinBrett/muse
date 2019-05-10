@@ -6,7 +6,7 @@
 
   width: 160px;
 
-  .icon /deep/ svg {
+  .icon >>> svg {
     pointer-events: none;
     float: left;
     height: 14px;

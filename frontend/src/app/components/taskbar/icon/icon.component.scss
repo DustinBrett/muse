@@ -4,7 +4,7 @@
 .taskbar-icon {
   @extend %taskbar-element-attributes;
 
-  .icon /deep/ svg {
+  .icon >>> svg {
     height: 16px;
     width: 16px;
     margin: 7px 10px;
@@ -13,7 +13,7 @@
 }
 
 .hover {
-  &:hover .icon /deep/ svg {
+  &:hover .icon >>> svg {
     fill: $taskbar-icon-image-hover-color;
   }
 }
