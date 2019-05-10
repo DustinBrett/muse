@@ -22,8 +22,6 @@ export class BackgroundComponent implements AfterViewInit {
   public height = window.innerHeight;
   public dustClouds = this.getBackgroundDustClouds();
 
-  private starCount = (this.width * this.height) * 0.005;
-
   constructor(
     private sanitizer: DomSanitizer
   ) { }
@@ -33,14 +31,18 @@ export class BackgroundComponent implements AfterViewInit {
   }
 
   createBackground(): void {
-    const context = this.background.nativeElement.getContext('2d');
+    const height = window.innerHeight;
+    const width = window.innerWidth;
 
-    context.canvas.width = window.innerWidth;
-    context.canvas.height = window.innerHeight;
+    const context = this.background.nativeElement.getContext('2d');
+    const starCount = (width * height) * 0.005;
+
+    context.canvas.width = width;
+    context.canvas.height = height;
 
     context.clearRect(0, 0, context.canvas.width, context.canvas.height);
 
-    for (let i = 0; i < this.starCount; i++) {
+    for (let i = 0; i < starCount; i++) {
       this.drawStar(
         context,
         this.getStarCoordinates(context),
