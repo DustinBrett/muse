@@ -5,7 +5,7 @@
   background-color: $window-background-color;
   outline: 1px solid $window-outline-color;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.35);
-  min-width: 180px;
+  min-width: 157px;
 
   .title-bar {
     background-color: rgb(255, 255, 255);
@@ -23,10 +23,13 @@
       float: left;
       font-size: 12px;
       margin-top: 6px;
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
 
     .buttons {
-      float: right;
+      position: absolute;
+      right: 0;
 
       .button /deep/ svg {
         position: relative;

@@ -12,7 +12,7 @@
   *ngFor="let icon of apps | async"
     [id]="icon.id"
     [icon]="icon.icon"
-    [label]="icon.label"
+    [title]="icon.title"
     [description]="icon.description"
     [selected]="icon.selected.icon"
   ></app-desktop-icon>

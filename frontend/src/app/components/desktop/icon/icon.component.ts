@@ -10,7 +10,7 @@ import { AppService } from '@core/app/services/app/app.service';
 export class DesktopIconComponent {
   @Input() id: number;
   @Input() icon: string;
-  @Input() label: string;
+  @Input() title: string;
   @Input() description: string;
   @Input() selected: string;
 

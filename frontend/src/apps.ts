@@ -1,7 +1,7 @@
 export interface App {
   id: number;
   icon: string;
-  label: string;
+  title: string;
   description: string;
   component: string;
   active: boolean;
@@ -24,7 +24,7 @@ export const APPS = [
   {
     id: 1,
     icon: 'blog',
-    label: 'Blog',
+    title: 'Blog',
     description: 'About my life',
     component: 'app-blog',
     active: false,
@@ -37,7 +37,7 @@ export const APPS = [
   {
     id: 2,
     icon: 'travel',
-    label: 'Travel',
+    title: 'Travel',
     description: 'About my travels',
     component: 'app-travel',
     active: false,
