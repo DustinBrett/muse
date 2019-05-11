@@ -13,7 +13,7 @@ export interface App {
   selected: {
     icon: boolean;
     window: boolean;
-    foreground: boolean;
+    index: number;
   };
   position?: {
     top: number;
@@ -36,7 +36,7 @@ export const APPS = [
     selected: {
       icon: false,
       window: false,
-      foreground: false
+      index: 0
     }
   },
   {
@@ -49,7 +49,7 @@ export const APPS = [
     selected: {
       icon: false,
       window: false,
-      foreground: false
+      index: 0
     }
   }
 ];

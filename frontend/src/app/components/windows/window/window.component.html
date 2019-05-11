@@ -2,12 +2,12 @@
   class="window"
 
   [class.selected]="selected"
-  [class.foreground]="foreground"
 
   [style.top]="top + 'px'"
   [style.left]="left + 'px'"
   [style.width]="width + 'px'"
   [style.height]="height + 'px'"
+  [style.z-index]="index"
 
   ngDraggable
   [handle]="titleBar"

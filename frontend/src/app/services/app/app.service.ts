@@ -36,10 +36,28 @@ export class AppService {
     );
   }
 
+  updateIndex(id: number): number {
+    this.update(app => {
+      if (app.id !== id && app.selected.index > 0) {
+        app.selected.index = app.selected.index - 1;
+      }
+    });
+
+    return APPS.length;
+  }
+
   select(id?: number, type?: string): void {
     this.update(
       id && type
-      ? app => app.selected[type] = app.selected.foreground = app.id === id
+      ? app => {
+        const found = (app.id === id);
+
+        app.selected[type] = found;
+
+        if (found && type === 'window') {
+          app.selected.index = this.updateIndex(id);
+        }
+      }
       : app => app.selected.icon = app.selected.window = false
     );
   }

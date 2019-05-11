@@ -26,7 +26,7 @@ export class WindowComponent implements AfterViewInit {
   @Input() title: string;
   @Input() component: Type<Component>;
   @Input() selected: boolean;
-  @Input() foreground: boolean;
+  @Input() index: number;
 
   @ViewChild(WindowComponentDirective) windowComponent: WindowComponentDirective;
 
