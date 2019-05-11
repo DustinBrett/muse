@@ -102,7 +102,7 @@ export class BackgroundComponent implements AfterViewInit {
       dustClouds.push(this.getRandomRadialGradient());
     }
 
-    return this.sanitizer.bypassSecurityTrustStyle();
+    return this.sanitizer.bypassSecurityTrustStyle(dustClouds.join(', '));
   }
 
   getRandomRadialGradient(): string {
