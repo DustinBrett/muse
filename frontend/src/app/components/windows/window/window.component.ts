@@ -1,13 +1,22 @@
-import { Component, Inject, Input, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ComponentFactoryResolver,
+  Inject,
+  Input,
+  Type,
+  ViewChild
+} from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { AppService } from '@core/app/services/app/app.service';
+import { WindowComponentDirective } from '@core/app/directives/window-component/window-component.directive';
 
 @Component({
   selector: 'app-window',
   templateUrl: './window.component.html',
   styleUrls: ['./window.component.scss']
 })
-export class WindowComponent implements OnInit {
+export class WindowComponent implements AfterViewInit {
   @Input() top: number;
   @Input() left: number;
   @Input() width: number;
@@ -15,9 +24,11 @@ export class WindowComponent implements OnInit {
   @Input() id: number;
   @Input() icon: string;
   @Input() title: string;
-  @Input() component: string;
+  @Input() component: Type<Component>;
   @Input() selected: boolean;
   @Input() foreground: boolean;
+
+  @ViewChild(WindowComponentDirective) windowComponent: WindowComponentDirective;
 
   private titleBarHeight = 30;
   private titleBarIconWidth = 29;
@@ -32,7 +43,8 @@ export class WindowComponent implements OnInit {
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
-    private appService: AppService
+    private appService: AppService,
+    private componentFactoryResolver: ComponentFactoryResolver
   ) {
     this.body = this.document.body as HTMLBodyElement;
   }
@@ -49,12 +61,17 @@ export class WindowComponent implements OnInit {
     this.updateDimensions(event.host.offsetWidth, event.host.offsetHeight);
   }
 
-  ngOnInit() {
+  ngAfterViewInit() {
     this.updateDimensions();
+
+    this.windowComponent.viewContainerRef.clear();
+    this.windowComponent.viewContainerRef.createComponent(
+      this.componentFactoryResolver.resolveComponentFactory(this.component)
+    );
   }
 
   updateDimensions(width = this.width, height = this.height) {
     this.titleBarTextWidth = `${ width - this.titleBarTextWidthPadding }px`;
-    this.componentHeight = `${ height + this.titleBarHeight }px`;
+    this.componentHeight = `${ height - this.titleBarHeight }px`;
   }
 }

@@ -1,9 +1,14 @@
+import { Component, Type } from '@angular/core';
+
+import { BlogComponent } from './blog/blog.component';
+import { TravelComponent } from './travel/travel.component';
+
 export interface App {
   id: number;
   icon: string;
   title: string;
   description: string;
-  component: string;
+  component: Type<Component>;
   active: boolean;
   selected: {
     icon: boolean;
@@ -26,7 +31,7 @@ export const APPS = [
     icon: 'blog',
     title: 'Blog',
     description: 'About my life',
-    component: 'app-blog',
+    component: BlogComponent,
     active: false,
     selected: {
       icon: false,
@@ -39,7 +44,7 @@ export const APPS = [
     icon: 'travel',
     title: 'Travel',
     description: 'About my travels',
-    component: 'app-travel',
+    component: TravelComponent,
     active: false,
     selected: {
       icon: false,

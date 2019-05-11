@@ -14,6 +14,10 @@ import { TaskbarEntryComponent } from './components/taskbar/entry/entry.componen
 import { ClockComponent } from './components/taskbar/clock/clock.component';
 import { WindowsComponent } from './components/windows/windows.component';
 import { WindowComponent } from './components/windows/window/window.component';
+import { WindowComponentDirective } from './directives/window-component/window-component.directive';
+
+import { BlogComponent } from './components/apps/blog/blog.component';
+import { TravelComponent } from './components/apps/travel/travel.component';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { AngularDraggableModule } from 'angular2-draggable';
@@ -33,7 +37,11 @@ import { AngularDraggableModule } from 'angular2-draggable';
     TaskbarEntryComponent,
     ClockComponent,
     WindowsComponent,
-    WindowComponent
+    WindowComponent,
+    WindowComponentDirective,
+
+    BlogComponent,
+    TravelComponent
   ],
   imports: [
     BrowserModule,
