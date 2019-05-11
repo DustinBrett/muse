@@ -37,7 +37,7 @@ $desktop-icon-text-shadow:
     background-color: $desktop-icon-hover-color;
   }
 
-  .icon >>> svg {
+  .icon ::ng-deep svg {
     height: 44px;
     width: 44px;
   }

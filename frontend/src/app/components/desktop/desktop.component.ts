@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { AppService } from '@core/app/services/app/app.service';
-import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-desktop',
@@ -14,12 +13,11 @@ export class DesktopComponent {
 
   private iconPadding = (this.topMargin + this.taskbarHeight);
 
-  public gridTemplateRows: SafeStyle;
+  public gridTemplateRows: string;
   public apps = this.appService.apps;
 
   constructor(
-    private appService: AppService,
-    private sanitizer: DomSanitizer
+    private appService: AppService
   ) {
     this.setGridTemplateRows();
   }
@@ -35,8 +33,7 @@ export class DesktopComponent {
   }
 
   setGridTemplateRows(): void {
-    this.gridTemplateRows = this.sanitizer.bypassSecurityTrustStyle(
-      `repeat(${ this.getIconsPerColumn(window.innerHeight) }, ${ this.iconSize }px)`
-    );
+    this.gridTemplateRows =
+      `repeat(${ this.getIconsPerColumn(window.innerHeight) }, ${ this.iconSize }px)`;
   }
 }

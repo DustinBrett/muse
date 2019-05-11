@@ -35,7 +35,7 @@ export class BackgroundComponent implements AfterViewInit {
     const width = window.innerWidth;
 
     const context = this.background.nativeElement.getContext('2d');
-    const starCount = (width * height) * 0.005;
+    const starCount = (width * height) * 0.004;
 
     context.canvas.width = width;
     context.canvas.height = height;
@@ -102,7 +102,7 @@ export class BackgroundComponent implements AfterViewInit {
       dustClouds.push(this.getRandomRadialGradient());
     }
 
-    return this.sanitizer.bypassSecurityTrustStyle(dustClouds.join(', '));
+    return this.sanitizer.bypassSecurityTrustStyle();
   }
 
   getRandomRadialGradient(): string {

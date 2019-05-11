@@ -6,7 +6,7 @@
 
   width: 160px;
 
-  .icon >>> svg {
+  .icon ::ng-deep svg {
     pointer-events: none;
     float: left;
     height: 14px;
