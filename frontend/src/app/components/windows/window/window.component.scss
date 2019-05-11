@@ -44,16 +44,22 @@
         }
       }
 
-      .minimize ::ng-deep svg {
+      .button.minimize ::ng-deep svg {
         padding: 10px 14px 10px 14px;
       }
 
-      .close ::ng-deep svg {
+      .button.close ::ng-deep svg {
         &:hover {
           background-color: $window-title-bar-close-hover-color;
           fill: $window-title-bar-close-fill-text-color;
         }
       }
+    }
+  }
+
+  &.selected {
+    .title-bar {
+      color: $window-title-bar-selected-text-color;
     }
   }
 
@@ -85,8 +91,4 @@
     right: -5px;
     bottom: -5px;
   }
-}
-
-.selected .title-bar {
-  color: $window-title-bar-selected-text-color;
 }
