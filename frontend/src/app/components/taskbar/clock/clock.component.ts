@@ -6,10 +6,50 @@ import { Component } from '@angular/core';
   styleUrls: ['./clock.component.scss']
 })
 export class ClockComponent {
+  private user = {
+    birthday: {
+      month: 'November',
+      date: 26,
+      year: 1985
+    }
+  };
+
+  public date = this.getDate();
   public time = this.getTime();
 
   constructor() {
     setInterval(() => this.time = this.getTime(), 1000);
+  }
+
+  getAge(age: number): string {
+    const ordinals = ['th', 'st', 'nd', 'rd'];
+    const x = age % 100;
+
+    return age + (ordinals[(x - 20) % 10] || ordinals[x] || ordinals[0]);
+  }
+
+  getDate(): string {
+    const now = new Date();
+
+    const month = now.toLocaleString('default', { month: 'long' });
+    const date = now.getDate();
+    const year = now.getFullYear();
+    const weekday = now.toLocaleString('en-us', { weekday: 'long' });
+
+    const fullDate = `${month} ${date}, ${year}\r\n${weekday}`;
+
+    const birthday = (
+      month === this.user.birthday.month &&
+      date === this.user.birthday.date
+    );
+
+    if (birthday) {
+      return `
+        Happy ${this.getAge(year - this.user.birthday.year)} Birthday!!!\r\n\r\n${fullDate}
+      `;
+    }
+
+    return fullDate;
   }
 
   getTime(): string {
