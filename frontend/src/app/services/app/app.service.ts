@@ -14,6 +14,22 @@ export class AppService {
     map(apps => apps.filter(app => app.active))
   );
 
+  // Need positioning for taskbar. It's historical based
+  public select = {
+    reset: () => this.update(app => app.selected.icon = app.selected.window = false),
+    icon: (id: number) => this.update(app => app.selected.icon = app.id === id),
+    window: (id: number) => this.update(app => {
+      const found = (app.id === id);
+
+      app.selected.window = found;
+
+      if (found) {
+        app.selected.index = this.updateIndex(id);
+        app.minimized = false;
+      }
+    })
+  };
+
   private update(operation: (app: App) => void) {
     APPS.forEach(operation);
     this.$apps.next(APPS);
@@ -23,7 +39,7 @@ export class AppService {
     this.update(app => {
       if (app.id === id) {
         app.active = true;
-        this.select(id, 'window');
+        this.select.window(id);
       }
     });
   }
@@ -36,6 +52,15 @@ export class AppService {
     );
   }
 
+  minimize(id: number): void {
+    this.update(app => {
+      if (app.id === id) {
+        app.minimized = true;
+        app.selected.window = false;
+      }
+    });
+  }
+
   updateIndex(id: number): number {
     this.update(app => {
       if (app.id !== id && app.selected.index > 0) {
@@ -44,21 +69,5 @@ export class AppService {
     });
 
     return APPS.length;
-  }
-
-  select(id?: number, type?: string): void {
-    this.update(
-      id && type
-      ? app => {
-        const found = (app.id === id);
-
-        app.selected[type] = found;
-
-        if (found && type === 'window') {
-          app.selected.index = this.updateIndex(id);
-        }
-      }
-      : app => app.selected.icon = app.selected.window = false
-    );
   }
 }

@@ -7,6 +7,19 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.35);
   min-width: 157px;
   min-height: 100px;
+  transform: scale(0);
+  opacity: 1;
+  transition: opacity 0.25s ease; // transform 0.5s linear
+
+  &.minimized {
+    animation: fadeInFromNone 0.5s ease-out;
+    transform: scale(0.5) translate(-500px, 1500px) !important; // translate should be toward the taskbar entry
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      transform 0.5s ease,
+      opacity 0.25s ease;
+  }
 
   .title-bar {
     background-color: rgb(255, 255, 255);

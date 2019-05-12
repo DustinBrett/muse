@@ -26,6 +26,7 @@ export class WindowComponent implements AfterViewInit {
   @Input() title: string;
   @Input() component: Type<Component>;
   @Input() selected: boolean;
+  @Input() minimized: boolean;
   @Input() index: number;
 
   @ViewChild(WindowComponentDirective) windowComponent: WindowComponentDirective;
@@ -50,7 +51,11 @@ export class WindowComponent implements AfterViewInit {
   }
 
   onMouseDown(): void {
-    this.appService.select(this.id, 'window');
+    this.appService.select.window(this.id);
+  }
+
+  minimize(): void {
+    this.appService.minimize(this.id);
   }
 
   close(): void {

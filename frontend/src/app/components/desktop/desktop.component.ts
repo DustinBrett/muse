@@ -24,7 +24,7 @@ export class DesktopComponent {
 
   onClick(event: Event, desktop: HTMLElement): void {
     if (event.target === desktop) {
-      this.appService.select();
+      this.appService.select.reset();
     }
   }
 

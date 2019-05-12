@@ -2,6 +2,7 @@
   class="window"
 
   [class.selected]="selected"
+  [class.minimized]="minimized"
 
   [style.top]="top + 'px'"
   [style.left]="left + 'px'"
@@ -37,6 +38,8 @@
       <app-svg-icon
         class="button minimize"
         name="minimize"
+
+        (click)="minimize()"
       ></app-svg-icon>
       <app-svg-icon
         class="button maximize"

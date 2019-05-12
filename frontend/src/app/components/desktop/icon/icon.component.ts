@@ -24,7 +24,7 @@ export class DesktopIconComponent {
   }
 
   onClick(): void {
-    this.appService.select(this.id, 'icon');
+    this.appService.select.icon(this.id);
   }
 
   onDblClick(): void {

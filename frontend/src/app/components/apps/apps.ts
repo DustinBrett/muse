@@ -15,6 +15,7 @@ export interface App {
     window: boolean;
     index: number;
   };
+  minimized: boolean;
   position?: {
     top: number;
     left: number;
@@ -30,26 +31,28 @@ export const APPS = [
     id: 1,
     icon: 'blog',
     title: 'Blog',
-    description: 'About my life',
+    description: 'About my life.',
     component: BlogComponent,
     active: false,
     selected: {
       icon: false,
       window: false,
       index: 0
-    }
+    },
+    minimized: false
   },
   {
     id: 2,
     icon: 'travel',
     title: 'Travel',
-    description: 'About my travels',
+    description: 'About my travels.',
     component: TravelComponent,
     active: false,
     selected: {
       icon: false,
       window: false,
       index: 0
-    }
+    },
+    minimized: false
   }
 ];

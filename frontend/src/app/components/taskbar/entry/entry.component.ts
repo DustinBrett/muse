@@ -17,6 +17,10 @@ export class TaskbarEntryComponent {
   ) { }
 
   onClick(): void {
-    this.appService.select(this.id, 'window');
+    if (this.selected) {
+      this.appService.minimize(this.id);
+    } else {
+      this.appService.select.window(this.id);
+    }
   }
 }
