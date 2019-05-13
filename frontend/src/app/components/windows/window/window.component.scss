@@ -12,10 +12,9 @@
   transition: opacity 0.25s ease; // transform 0.5s linear
 
   &.minimized {
-    animation: fadeInFromNone 0.5s ease-out;
+    pointer-events: none;
     transform: scale(0.5) translate(-500px, 1500px) !important; // translate should be toward the taskbar entry
     opacity: 0;
-    pointer-events: none;
     transition:
       transform 0.5s ease,
       opacity 0.25s ease;
