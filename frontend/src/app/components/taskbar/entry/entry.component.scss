@@ -1,22 +1,10 @@
 @import 'theme';
 @import '../taskbar.element';
 
-@keyframes expand {
-  from {
-    transform: scaleX(0);
-  }
-
-  to {
-    transform: scaleX(1);
-  }
-}
-
 .taskbar-entry {
   @extend %taskbar-element-attributes;
 
   width: 160px;
-  transform-origin: left;
-  animation: 0.2s expand;
 
   .highlight {
     height: 30px;

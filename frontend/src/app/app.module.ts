@@ -20,6 +20,7 @@ import { BlogComponent } from './components/apps/blog/blog.component';
 import { TravelComponent } from './components/apps/travel/travel.component';
 
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularDraggableModule } from 'angular2-draggable';
 
 @NgModule({
@@ -45,6 +46,7 @@ import { AngularDraggableModule } from 'angular2-draggable';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AngularDraggableModule
   ],
   providers: [],
