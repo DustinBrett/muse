@@ -46,7 +46,8 @@
 
       .button ::ng-deep svg {
         position: relative;
-        padding: 9px 14px 11px 14px;
+        padding: 9px 14px 10px 14px;
+        border-bottom: 1px solid rgb(255, 255, 255);
         height: 10px;
         width: 10px;
         transition: 0.2s;
@@ -57,7 +58,7 @@
       }
 
       .button.minimize ::ng-deep svg {
-        padding: 10px 14px 10px 14px;
+        padding: 10px 14px 9px 14px;
       }
 
       .button.close ::ng-deep svg {
