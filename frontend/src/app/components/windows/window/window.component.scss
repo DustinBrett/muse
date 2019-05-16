@@ -11,15 +11,6 @@
   opacity: 1;
   transition: opacity 0.25s ease; // transform 0.5s linear
 
-  &.minimized {
-    pointer-events: none;
-    transform: scale(0.5) translate(-500px, 1500px) !important; // translate should be toward the taskbar entry
-    opacity: 0;
-    transition:
-      transform 0.5s ease,
-      opacity 0.25s ease;
-  }
-
   .title-bar {
     background-color: rgb(255, 255, 255);
     height: 30px;
@@ -70,6 +61,15 @@
     }
   }
 
+  &.minimized {
+    pointer-events: none;
+    transform: scale(0.5) translate(-500px, 1500px) !important; // translate should be toward the taskbar entry
+    opacity: 0;
+    transition:
+      transform 0.5s ease,
+      opacity 0.25s ease;
+  }
+
   &.selected {
     .title-bar {
       color: $window-title-bar-selected-text-color;
@@ -103,9 +103,5 @@
   .ng-resizable-se {
     right: -5px;
     bottom: -5px;
-  }
-
-  .ng-dragging {
-    opacity: 0.5;
   }
 }

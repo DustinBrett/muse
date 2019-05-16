@@ -50,7 +50,20 @@ export class WindowComponent implements AfterViewInit {
     this.body = this.document.body as HTMLBodyElement;
   }
 
-  onMouseDown(): void {
+  ngAfterViewInit() {
+    this.updateDimensions();
+
+    this.windowComponent.viewContainerRef.clear();
+    this.windowComponent.viewContainerRef.createComponent(
+      this.componentFactoryResolver.resolveComponentFactory(this.component)
+    );
+  }
+
+  onResize(event) {
+    this.updateDimensions(event.host.offsetWidth, event.host.offsetHeight);
+  }
+
+  selectWindow(): void {
     this.appService.select.window(this.id);
   }
 
@@ -60,19 +73,6 @@ export class WindowComponent implements AfterViewInit {
 
   close(): void {
     this.appService.deactivate(this.id);
-  }
-
-  onResize(event) {
-    this.updateDimensions(event.host.offsetWidth, event.host.offsetHeight);
-  }
-
-  ngAfterViewInit() {
-    this.updateDimensions();
-
-    this.windowComponent.viewContainerRef.clear();
-    this.windowComponent.viewContainerRef.createComponent(
-      this.componentFactoryResolver.resolveComponentFactory(this.component)
-    );
   }
 
   updateDimensions(width = this.width, height = this.height) {
