@@ -31,7 +31,9 @@
               "src/assets/font/font.css",
               "node_modules/angular2-draggable/css/resizable.min.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/default-passive-events/dist/index.js"
+            ],
             "stylePreprocessorOptions": {
               "includePaths": [
                 "src"
@@ -98,7 +100,9 @@
               "src/assets/font/font.css",
               "node_modules/angular2-draggable/css/resizable.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/default-passive-events/dist/index.js"
+            ]
           }
         },
         "lint": {

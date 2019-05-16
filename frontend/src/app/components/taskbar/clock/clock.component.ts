@@ -17,11 +17,14 @@ export class ClockComponent {
   private SECOND = 1000;
 
   public date = this.getDate();
-  public time = this.getTime(true);
+  public time = this.getTime();
 
   constructor() {
     setTimeout(
-      () => setInterval(this.updateClock.bind(this), this.SECOND),
+      () => {
+        this.updateClock();
+        setInterval(this.updateClock.bind(this), this.SECOND);
+      },
       this.SECOND - new Date().getMilliseconds()
     );
   }
@@ -61,7 +64,7 @@ export class ClockComponent {
     return fullDate;
   }
 
-  getTime(init = false): string {
+  getTime(): string {
     const now = new Date();
 
     const hour24 = now.getHours();
@@ -71,7 +74,7 @@ export class ClockComponent {
 
     const hour = morning || noon ? hour24 ? hour24 : 12 : hour24 - 12;
     const minute = now.getMinutes().toString().padStart(2, '0');
-    const second = (now.getSeconds() + (init ? 1 : 0)).toString().padStart(2, '0');
+    const second = now.getSeconds().toString().padStart(2, '0');
 
     return `${hour}:${minute}:${second} ${morning ? 'AM' : 'PM'}`;
   }
