@@ -17,8 +17,8 @@ export class DesktopIconComponent {
   public body: HTMLBodyElement;
 
   constructor(
-    @Inject(DOCUMENT) private document: Document,
-    private appService: AppService
+    @Inject(DOCUMENT) private readonly document: Document,
+    private readonly appService: AppService
   ) {
     this.body = this.document.body as HTMLBodyElement;
   }

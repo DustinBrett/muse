@@ -10,6 +10,8 @@ import {
 import { DOCUMENT } from '@angular/common';
 import { AppService } from '@core/app/services/app/app.service';
 import { WindowComponentDirective } from '@core/app/directives/window-component/window-component.directive';
+import { ResizeHandle } from 'angular2-draggable/lib/widgets/resize-handle';
+import { IResizeEvent } from 'angular2-draggable/lib/models/resize-event';
 
 @Component({
   selector: 'app-window',
@@ -31,11 +33,12 @@ export class WindowComponent implements AfterViewInit {
 
   @ViewChild(WindowComponentDirective) windowComponent: WindowComponentDirective;
 
-  private titleBarHeight = 30;
-  private titleBarIconWidth = 29;
-  private titleBarButtonWidth = 114;
-  private titleBarTextButtonPadding = 5;
-  private titleBarTextWidthPadding = this.titleBarIconWidth + this.titleBarButtonWidth + this.titleBarTextButtonPadding;
+  private readonly titleBarHeight = 30;
+  private readonly titleBarIconWidth = 29;
+  private readonly titleBarButtonWidth = 114;
+  private readonly titleBarTextButtonPadding = 5;
+  private readonly titleBarTextWidthPadding =
+    this.titleBarIconWidth + this.titleBarButtonWidth + this.titleBarTextButtonPadding;
 
   public body: HTMLBodyElement;
 
@@ -43,14 +46,14 @@ export class WindowComponent implements AfterViewInit {
   public componentHeight: string;
 
   constructor(
-    @Inject(DOCUMENT) private document: Document,
-    private appService: AppService,
-    private componentFactoryResolver: ComponentFactoryResolver
+    @Inject(DOCUMENT) private readonly document: Document,
+    private readonly appService: AppService,
+    private readonly componentFactoryResolver: ComponentFactoryResolver
   ) {
     this.body = this.document.body as HTMLBodyElement;
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.updateDimensions();
 
     this.windowComponent.viewContainerRef.clear();
@@ -59,8 +62,10 @@ export class WindowComponent implements AfterViewInit {
     );
   }
 
-  onResize(event) {
-    this.updateDimensions(event.host.offsetWidth, event.host.offsetHeight);
+  onResize(event: IResizeEvent): void {
+    const resizeHandle = event.host as HTMLDivElement;
+
+    this.updateDimensions(resizeHandle.offsetWidth, resizeHandle.offsetHeight);
   }
 
   selectWindow(): void {
@@ -75,7 +80,7 @@ export class WindowComponent implements AfterViewInit {
     this.appService.deactivate(this.id);
   }
 
-  updateDimensions(width = this.width, height = this.height) {
+  updateDimensions(width = this.width, height = this.height): void {
     this.titleBarTextWidth = `${ width - this.titleBarTextWidthPadding }px`;
     this.componentHeight = `${ height - this.titleBarHeight }px`;
   }

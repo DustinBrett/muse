@@ -7,22 +7,23 @@ import { AppService } from '@core/app/services/app/app.service';
   styleUrls: ['./desktop.component.scss']
 })
 export class DesktopComponent {
-  private topMargin = 5;
-  private taskbarHeight = 30;
-  private iconSize = 98;
+  public readonly apps$ = this.appService.apps$;
 
-  private iconPadding = (this.topMargin + this.taskbarHeight);
+  private readonly topMargin = 5;
+  private readonly taskbarHeight = 30;
+  private readonly iconSize = 98;
+
+  private readonly iconPadding = this.topMargin + this.taskbarHeight;
 
   public gridTemplateRows: string;
-  public apps = this.appService.apps;
 
   constructor(
-    private appService: AppService
+    private readonly appService: AppService
   ) {
     this.setGridTemplateRows();
   }
 
-  onClick(event: Event, desktop: HTMLElement): void {
+  onClick(event: Event, desktop: HTMLDivElement): void {
     if (event.target === desktop) {
       this.appService.select.reset();
     }

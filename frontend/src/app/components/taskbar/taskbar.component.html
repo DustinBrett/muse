@@ -18,7 +18,7 @@
   [style.width]="taskBarEntriesWidth"
   >
     <app-taskbar-entry
-      *ngFor="let entry of apps | async"
+      *ngFor="let entry of apps$ | async"
         [id]="entry.id"
         [icon]="entry.icon"
         [title]="entry.title"

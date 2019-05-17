@@ -7,8 +7,8 @@ import { AppService } from '@core/app/services/app/app.service';
   styleUrls: []
 })
 export class WindowsComponent {
-  public apps = this.appService.active;
-  public default = {
+  public readonly apps$ = this.appService.active$;
+  public readonly default = {
     position: {
       top: 200,
       left: 200
@@ -20,6 +20,6 @@ export class WindowsComponent {
   };
 
   constructor(
-    private appService: AppService
+    private readonly appService: AppService
   ) { }
 }

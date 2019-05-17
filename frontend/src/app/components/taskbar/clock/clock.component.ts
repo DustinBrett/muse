@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./clock.component.scss']
 })
 export class ClockComponent {
-  private user = {
+  private readonly user = {
     birthday: {
       month: 'November',
       date: 26,
@@ -14,23 +14,35 @@ export class ClockComponent {
     }
   };
 
-  private SECOND = 1000;
+  private readonly SECOND = 1000;
 
-  public date = this.getDate();
   public time = this.getTime();
+  public date = this.getDate();
 
   constructor() {
     setTimeout(
       () => {
-        this.updateClock();
-        setInterval(this.updateClock.bind(this), this.SECOND);
+        this.updateTime();
+        setInterval(() => { this.updateTime(); }, this.SECOND);
       },
       this.SECOND - new Date().getMilliseconds()
     );
+
+    setTimeout(
+      () => {
+        this.updateDate();
+        setInterval(() => { this.updateDate(); }, this.SECOND * 60 * 60 * 24);
+      },
+      new Date().setHours(24, 0, 0, 0) - new Date().getTime()
+    );
   }
 
-  updateClock() {
+  updateTime(): void {
     this.time = this.getTime();
+  }
+
+  updateDate(): void {
+    this.date = this.getDate();
   }
 
   getAge(age: number): string {
@@ -51,7 +63,8 @@ export class ClockComponent {
     const fullDate = `${month} ${date}, ${year}\r\n${weekday}`;
 
     const birthday = (
-      month === this.user.birthday.month &&
+      month === this.user.birthday.month
+      &&
       date === this.user.birthday.date
     );
 

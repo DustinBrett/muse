@@ -13,7 +13,7 @@ export class TaskbarEntryComponent {
   @Input() selected: boolean;
 
   constructor(
-    private appService: AppService
+    private readonly appService: AppService
   ) { }
 
   onClick(): void {

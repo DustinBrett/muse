@@ -13,11 +13,11 @@ interface Coordinates {
 export class BackgroundComponent implements AfterViewInit {
   @ViewChild('background') background: ElementRef;
 
-  private colorRange = [0, 60, 240];
-  private colorRangeIndexCount = this.colorRange.length - 1;
+  private readonly colorRange = [0, 60, 240];
+  private readonly colorRangeIndexCount = this.colorRange.length - 1;
 
-  public width = window.innerWidth;
-  public height = window.innerHeight;
+  public readonly width = window.innerWidth;
+  public readonly height = window.innerHeight;
 
   ngAfterViewInit(): void {
     this.createBackground();
@@ -49,16 +49,18 @@ export class BackgroundComponent implements AfterViewInit {
   }
 
   createBackground(): void {
+    const canvas = this.background.nativeElement as HTMLCanvasElement;
+
     const height = window.innerHeight;
     const width = window.innerWidth;
 
-    const context = this.background.nativeElement.getContext('2d');
+    const context = canvas.getContext('2d');
     const starCount = (width * height) * 0.004;
 
-    context.canvas.width = width;
-    context.canvas.height = height;
+    canvas.width = width;
+    canvas.height = height;
 
-    context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+    context.clearRect(0, 0, canvas.width, canvas.height);
 
     for (let i = 0; i < starCount; i++) {
       this.drawStar(

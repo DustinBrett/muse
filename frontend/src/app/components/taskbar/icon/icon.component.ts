@@ -20,7 +20,7 @@ export class TaskbarIconComponent implements OnInit {
     this.iconName = this.name;
   }
 
-  onMouseOver($event): void {
+  onMouseOver($event: MouseEvent): void {
     if (this.expand) {
       this.iconName = this.name + ($event.type === 'mouseenter' ? '-expanded' : '');
     }

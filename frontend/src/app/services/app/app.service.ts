@@ -7,32 +7,37 @@ import { App, APPS } from '@core/app/components/apps/apps';
   providedIn: 'root'
 })
 export class AppService {
-  private $apps: BehaviorSubject<App[]> = new BehaviorSubject(APPS);
+  private readonly apps: BehaviorSubject<App[]> = new BehaviorSubject(APPS);
 
-  public apps: Observable<App[]> = this.$apps.asObservable();
-  public active: Observable<App[]> = this.apps.pipe(
+  public readonly apps$: Observable<App[]> = this.apps.asObservable();
+  public readonly active$: Observable<App[]> = this.apps$.pipe(
     map(apps => apps.filter(app => app.active))
   );
 
-  // Need positioning for taskbar. It's historical based
-  public select = {
-    reset: () => this.update(app => app.selected.icon = app.selected.window = false),
-    icon: (id: number) => this.update(app => app.selected.icon = app.id === id),
-    window: (id: number) => this.update(app => {
-      const found = (app.id === id);
+  public readonly select = {
+    reset: () => {
+      this.update(app => app.selected.icon = app.selected.window = false);
+    },
+    icon: (id: number) => {
+      this.update(app => app.selected.icon = app.id === id);
+    },
+    window: (id: number) => {
+      this.update(app => {
+        const found = (app.id === id);
 
-      app.selected.window = found;
+        app.selected.window = found;
 
-      if (found) {
-        app.selected.index = this.updateIndex(id);
-        app.minimized = false;
-      }
-    })
+        if (found) {
+          app.selected.index = this.updateIndex(id);
+          app.minimized = false;
+        }
+      });
+    }
   };
 
-  private update(operation: (app: App) => void) {
+  private update(operation: (app: App) => void): void {
     APPS.forEach(operation);
-    this.$apps.next(APPS);
+    this.apps.next(APPS);
   }
 
   activate(id: number): void {

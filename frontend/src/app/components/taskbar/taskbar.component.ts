@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AppService } from '@core/app/services/app/app.service';
 import { animate, style, transition, trigger } from '@angular/animations';
 
+const slideSpeed = '150ms linear';
+
 @Component({
   selector: 'app-taskbar',
   templateUrl: './taskbar.component.html',
@@ -13,18 +15,18 @@ import { animate, style, transition, trigger } from '@angular/animations';
           'transform-origin': 'left',
           transform: 'scaleX(0)'
         }),
-        animate('150ms linear', style({ transform: 'scaleX(1)' }))
+        animate(slideSpeed, style({ transform: 'scaleX(1)' }))
       ]),
       transition(':leave', [
         style({ 'transform-origin': 'left' }),
-        animate('150ms linear', style({ transform: 'scaleX(0)' }))
+        animate(slideSpeed, style({ transform: 'scaleX(0)' }))
       ])
     ]
   )]
 })
 export class TaskbarComponent implements OnInit {
-  public apps = this.appService.active;
-  public icons = [
+  public readonly apps$ = this.appService.active$;
+  public readonly icons = [
     {
       effects: ['hover'],
       name: 'start',
@@ -37,26 +39,26 @@ export class TaskbarComponent implements OnInit {
     }
   ];
 
-  private iconWidth = 36;
-  private clockWidth = 80;
-  private taskBarEntriesPadding = 6;
-  private taskBarIconsWidth = this.icons.length * this.iconWidth;
+  private readonly iconWidth = 36;
+  private readonly clockWidth = 80;
+  private readonly taskBarEntriesPadding = 6;
+  private readonly taskBarIconsWidth = this.icons.length * this.iconWidth;
 
   public taskBarEntriesWidth: string;
 
   constructor(
-    private appService: AppService
+    private readonly appService: AppService
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.setTaskBarEntriesWidth();
   }
 
-  onResize() {
+  onResize(): void {
     this.setTaskBarEntriesWidth();
   }
 
-  setTaskBarEntriesWidth() {
+  setTaskBarEntriesWidth(): void {
     this.taskBarEntriesWidth =
       `${ window.innerWidth - this.taskBarIconsWidth - this.clockWidth - this.taskBarEntriesPadding }px`
     ;
