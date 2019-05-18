@@ -1,11 +1,25 @@
-.blog-post {
-  padding: 10px 20px;
+.blog-entry {
+  position: absolute;
+  overflow-y: auto;
+  top: 30px;
+  bottom: 0;
 
   .title {
+    display: inline-block;
+    padding: 10px 15px 0 15px;
     margin: 0;
   }
 
   .content {
-    font-size: 90%;
+    margin: 20px;
+  }
+
+  .gallery {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 65px;
+    width: 225px;
+    text-align: right;
   }
 }
