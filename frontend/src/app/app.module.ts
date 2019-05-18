@@ -17,6 +17,7 @@ import { WindowComponent } from './components/windows/window/window.component';
 import { WindowComponentDirective } from './directives/window-component/window-component.directive';
 
 import { BlogComponent } from './components/apps/blog/blog.component';
+import { BlogEntryComponent } from './components/apps/blog/entry/entry.component';
 import { TravelComponent } from './components/apps/travel/travel.component';
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -42,6 +43,7 @@ import { AngularDraggableModule } from 'angular2-draggable';
     WindowComponentDirective,
 
     BlogComponent,
+    BlogEntryComponent,
     TravelComponent
   ],
   imports: [

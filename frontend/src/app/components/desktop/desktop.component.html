@@ -9,11 +9,11 @@
   (window:resize)="setGridTemplateRows()"
 >
   <app-desktop-icon
-  *ngFor="let icon of apps$ | async"
-    [id]="icon.id"
-    [icon]="icon.icon"
-    [title]="icon.title"
-    [description]="icon.description"
-    [selected]="icon.selected.icon"
+    *ngFor="let icon of apps$ | async"
+      [id]="icon.id"
+      [icon]="icon.icon"
+      [title]="icon.title"
+      [description]="icon.description"
+      [selected]="icon.selected.icon"
   ></app-desktop-icon>
 </div>

@@ -10,12 +10,12 @@ export class WindowsComponent {
   public readonly apps$ = this.appService.active$;
   public readonly default = {
     position: {
-      top: 200,
-      left: 200
+      top: 150,
+      left: 150
     },
     dimensions: {
-      width: 200,
-      height: 200
+      width: 400,
+      height: 400
     }
   };
 

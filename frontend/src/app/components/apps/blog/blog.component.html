@@ -1,1 +1,7 @@
-blog works!
+<div id="blog">
+  <app-blog-entry
+    *ngFor="let post of posts$ | async"
+      [title]="post.title"
+      [content]="post.content"
+  ></app-blog-entry>
+</div>
