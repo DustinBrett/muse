@@ -10,7 +10,6 @@ import {
 import { DOCUMENT } from '@angular/common';
 import { AppService } from '@core/app/services/app/app.service';
 import { WindowComponentDirective } from '@core/app/directives/window-component/window-component.directive';
-import { ResizeHandle } from 'angular2-draggable/lib/widgets/resize-handle';
 import { IResizeEvent } from 'angular2-draggable/lib/models/resize-event';
 
 @Component({
@@ -56,10 +55,12 @@ export class WindowComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.updateDimensions();
 
-    this.windowComponent.viewContainerRef.clear();
-    this.windowComponent.viewContainerRef.createComponent(
-      this.componentFactoryResolver.resolveComponentFactory(this.component)
-    );
+    setTimeout(() => {
+      this.windowComponent.viewContainerRef.clear();
+      this.windowComponent.viewContainerRef.createComponent(
+        this.componentFactoryResolver.resolveComponentFactory(this.component)
+      );
+    }, 0);
   }
 
   onResize(event: IResizeEvent): void {
