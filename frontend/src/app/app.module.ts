@@ -23,6 +23,7 @@ import { TravelComponent } from './components/apps/travel/travel.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularDraggableModule } from 'angular2-draggable';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { AngularDraggableModule } from 'angular2-draggable';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AngularDraggableModule
+    AngularDraggableModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
