@@ -7,9 +7,7 @@ import { AppService } from './services/app/app.service';
   styleUrls: []
 })
 export class AppComponent implements OnInit {
-  private readonly startupIds: number[] = [
-    1 // Blog
-  ];
+  private readonly startupIds: number[] = [];
 
   constructor(
     private readonly appService: AppService
