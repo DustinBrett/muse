@@ -1,5 +1,9 @@
 <div class="blog-entry">
-  <h1 class="title"><b>{{ title }}</b></h1>
-  <div class="content">{{ content }}</div>
-  <div class="gallery"></div>
+  <h1 class="title">
+    <a href="{{ link }}">
+      <b>{{ title }}</b>
+    </a>
+  </h1>
+  <div class="pubDate"><em>{{ formattedDate(pubDate) }}</em></div>
+  <div class="content" [innerHTML]="content"></div>
 </div>

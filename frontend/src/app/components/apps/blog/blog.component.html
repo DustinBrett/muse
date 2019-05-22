@@ -2,6 +2,8 @@
   <app-blog-entry
     *ngFor="let post of posts$ | async"
       [title]="post.title"
+      [link]="post.link"
+      [pubDate]="post.pubDate"
       [content]="post.content"
   ></app-blog-entry>
 </div>

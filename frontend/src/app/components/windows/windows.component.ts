@@ -15,7 +15,7 @@ export class WindowsComponent {
     },
     dimensions: {
       width: 500,
-      height: 370
+      height: 500
     }
   };
 

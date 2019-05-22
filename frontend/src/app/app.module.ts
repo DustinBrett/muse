@@ -18,12 +18,10 @@ import { WindowComponentDirective } from './directives/window-component/window-c
 
 import { BlogComponent } from './components/apps/blog/blog.component';
 import { BlogEntryComponent } from './components/apps/blog/entry/entry.component';
-import { TravelComponent } from './components/apps/travel/travel.component';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularDraggableModule } from 'angular2-draggable';
-import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -44,14 +42,12 @@ import { HttpClientModule } from '@angular/common/http';
     WindowComponentDirective,
 
     BlogComponent,
-    BlogEntryComponent,
-    TravelComponent
+    BlogEntryComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AngularDraggableModule,
-    HttpClientModule
+    AngularDraggableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

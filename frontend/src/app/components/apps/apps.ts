@@ -1,14 +1,14 @@
-import { Component, Type } from '@angular/core';
+import { Type } from '@angular/core';
 
 import { BlogComponent } from './blog/blog.component';
-import { TravelComponent } from './travel/travel.component';
 
 export interface App {
   id: number;
   icon: string;
   title: string;
   description: string;
-  component: Type<Component>;
+  // tslint:disable-next-line: no-any
+  component: Type<any>;
   active: boolean;
   selected: {
     icon: boolean;
@@ -33,20 +33,6 @@ export const APPS = [
     title: 'Blog',
     description: 'About my life.',
     component: BlogComponent,
-    active: false,
-    selected: {
-      icon: false,
-      window: false,
-      index: 0
-    },
-    minimized: false
-  },
-  {
-    id: 2,
-    icon: 'travel',
-    title: 'Travel',
-    description: 'About my travels.',
-    component: TravelComponent,
     active: false,
     selected: {
       icon: false,
