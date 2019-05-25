@@ -1,9 +1,9 @@
 import {
-  AfterViewInit,
   Component,
   ComponentFactoryResolver,
   Inject,
   Input,
+  OnInit,
   Type,
   ViewChild
 } from '@angular/core';
@@ -17,7 +17,7 @@ import { IResizeEvent } from 'angular2-draggable/lib/models/resize-event';
   templateUrl: './window.component.html',
   styleUrls: ['./window.component.scss']
 })
-export class WindowComponent implements AfterViewInit {
+export class WindowComponent implements OnInit {
   @Input() top: number;
   @Input() left: number;
   @Input() width: number;
@@ -30,7 +30,7 @@ export class WindowComponent implements AfterViewInit {
   @Input() minimized: boolean;
   @Input() index: number;
 
-  @ViewChild(WindowComponentDirective) windowComponent: WindowComponentDirective;
+  @ViewChild(WindowComponentDirective, { static: true }) windowComponent: WindowComponentDirective;
 
   private readonly titleBarHeight = 30;
   private readonly titleBarIconWidth = 29;
@@ -52,15 +52,13 @@ export class WindowComponent implements AfterViewInit {
     this.body = this.document.body as HTMLBodyElement;
   }
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
     this.updateDimensions();
 
-    setTimeout(() => {
-      this.windowComponent.viewContainerRef.clear();
-      this.windowComponent.viewContainerRef.createComponent(
-        this.componentFactoryResolver.resolveComponentFactory(this.component)
-      );
-    }, 0);
+    this.windowComponent.viewContainerRef.clear();
+    this.windowComponent.viewContainerRef.createComponent(
+      this.componentFactoryResolver.resolveComponentFactory(this.component)
+    );
   }
 
   onResize(event: IResizeEvent): void {
